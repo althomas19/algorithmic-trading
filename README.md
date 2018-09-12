@@ -3,6 +3,6 @@ Github Repo of everything related to my algorithmic trading indpendent study thi
 
 Check out the summary paper for my research thus far. 
 
-###Implementation:
+### Implementation:
 In Progress: SMA
 Completed: 
