@@ -1,1 +1,0 @@
-# will have stock retrieval implemented

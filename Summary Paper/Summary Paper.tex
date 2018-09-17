@@ -25,7 +25,7 @@
 
 \noindent\textbf{Algorithmic-Trading - Summary Paper - Motivations, Foundations, Techniques}
 
-\subsection*{Introduction and Foundations}
+\section*{Introduction and Foundations}
 
 Algorithmic-Trading (AT), is defined as follows: \begin{displayquote} ``In algorithmic trading (AT), computers directly interface with trading platforms, placing orders without immediate human intervention. The computers observe market data and possibly other information at very high frequency, and, based on a
 built-in algorithm, send back trading instructions, often within milliseconds. A
@@ -47,7 +47,7 @@ The May 6th, 2010 "Flash Crash" brought the public's attention to the little pub
 
 AT is a relatively secretive area of financial trading, but can result in massive profits if performed correctly with proper portfolio management, risk and alpha models. 
 
-\subsection*{Key Techniques}
+\section*{Key Techniques}
 
 \begin{figure}[ht!]
 \centering
@@ -56,6 +56,8 @@ AT is a relatively secretive area of financial trading, but can result in massiv
 \end{figure}
 
 \subsection*{Simple Moving Average (SMA)}
+
+(see Teixiera, Oliveria for mathematical representation)
 
 This is calculated by adding a certain amount of closing prices and dividing by the total amount of days. Short term averages are often compared against longer term averages, often signaling uptrends and downtrends. Popular methods include the golden cross and death cross, with the 50 day SMA crosses below or above the 200 day moving average. The former is often a buy signal reinforced by high trading volumes while the latter is considered bearish.
 \subsection*{Pairs Trading and Arbitrage}
@@ -81,5 +83,24 @@ General strategies that aim at capturing trends in the market fall under this um
 \subsection*{Risk Model}
 
 This method is less of a trading strategy and more of a stop method used to evaluate portfolios. A sample model may evaluate the VAR (value at risk) for everything owned in the portfolio. If the VAR reaches a certain threshold in comparison to its value, close all positions in the portfolio. 
+
+\subsection*{Bollinger Bands}
+
+These are designed to compare volatility and relative price levels over time. There are 3 measures or "bands", with a SMA in the middle accompanied by two bands above and below which are SMA $+/-$ a given number of standard deviations
+
+\subsection*{RSI - Relative Strength Index}
+
+This is one of the most popular momentum oscillators and compares the magnitude of recent gains to the magnitude of recent losses and gives a number between 0 and 100. When it falls below 70 it is considered a bearish signal while if it's above 30 that is generally a bullish signal. The equation is given as RSI $= 100 - (100/(1+$avgGain$/$avgLoss$))$
+
+\section*{Conclusion}
+
+AT and HFT are far more secretive than I would have imagined. With the expansion of financial literacy and wide tools available today to trade over nearly every market now available to the average person, I would have expected a far more open-source, collaborative community that you find in the software/computer science field. 
+
+SMA and its application with the dual moving average strategy is a simple and naive AT strategy. However, many applications such as EMA and Bollinger Bands use moving average as its basis. Pairs trading and arbitrage strategies are much more involved. Other models and metrics such as VAR give a different side of AT that is more focused on portfolio management and risk.
+
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{References}
+
 
 \end{document}
