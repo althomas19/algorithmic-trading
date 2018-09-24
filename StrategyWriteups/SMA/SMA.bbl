@@ -1,3 +1,13 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{AlmeidaTeixeira}
+Lamartine {Almeida Teixeira}, Adriano Lorena, and In{\'{a}}cio {De Oliveira}.
+\newblock {A method for automatic stock trading combining technical analysis
+  and nearest neighbor classification}.
+
+\bibitem{Ehlers}
+John Ehlers.
+\newblock {SIGNAL ANALYSIS CONCEPTS}.
+\newblock Technical report.
 
 \end{thebibliography}

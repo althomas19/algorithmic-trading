@@ -2,47 +2,50 @@ This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: SMA.aux
 The style file: plain.bst
-I found no \citation commands---while reading file SMA.aux
 Database file #1: References.bib
-You've used 0 entries,
+Warning--empty journal in AlmeidaTeixeira
+Warning--empty year in AlmeidaTeixeira
+Warning--empty institution in Ehlers
+Warning--empty year in Ehlers
+You've used 2 entries,
             2118 wiz_defined-function locations,
-            497 strings with 3989 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            505 strings with 4253 characters,
+and the built_in function-call counts, 484 in all, are:
+= -- 41
+> -- 25
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 10
+- -- 8
+* -- 33
+:= -- 95
+add.period$ -- 5
+call.type$ -- 2
+change.case$ -- 11
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 6
+duplicate$ -- 18
+empty$ -- 33
+format.name$ -- 8
+if$ -- 88
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 12
+num.names$ -- 4
+pop$ -- 16
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 8
 quote$ -- 0
-skip$ -- 1
+skip$ -- 10
 stack$ -- 0
-substring$ -- 0
+substring$ -- 10
 swap$ -- 0
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+type$ -- 8
+warning$ -- 4
+while$ -- 4
+width$ -- 3
+write$ -- 18
+(There were 4 warnings)
