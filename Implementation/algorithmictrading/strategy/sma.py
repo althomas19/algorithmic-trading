@@ -5,7 +5,7 @@ import numpy as np
 from algorithmictrading.stockData.getStock import stockDataRetriever
 
 
-def execute( stock_name, start_date, end_date):
+def execute(stock_name, start_date, end_date):
     stock = stockDataRetriever(stock_name, start_date, end_date).getStock()
 
     # Initialize the short and long windows and buy sell in df
@@ -44,16 +44,20 @@ def execute( stock_name, start_date, end_date):
     print(baseline_profit, strategy_profit)
     percentage_difference_profit = round((float(strategy_profit - baseline_profit)) / initial_capital * 100, 2)
 
-    # plot earnings curve
+
+
     fig = plt.figure()
     fig.suptitle(stock_name)
-    ax1 = fig.add_subplot(111, ylabel='Portfolio value in $')
-    portfolio['total'].plot(ax=ax1, lw=2.)
-    ax1.plot(portfolio.loc[df.positions == 1.0].index, 
-             portfolio.total[df.positions == 1.0],
+    ax1 = fig.add_subplot(111,  ylabel='Price in $')
+    
+    stock['Close'].plot(ax=ax1, color='r', lw=2.)
+    df[['short_mavg', 'long_mavg']].plot(ax=ax1, lw=2.)
+    # Plot the buy and sell df
+    ax1.plot(df.loc[df.positions == 1.0].index,
+             df.short_mavg[df.positions == 1.0],
              '^', markersize=10, color='m')
-    ax1.plot(portfolio.loc[df.positions == -1.0].index, 
-             portfolio.total[df.positions == -1.0],
+    ax1.plot(df.loc[df.positions == -1.0].index,
+             df.short_mavg[df.positions == -1.0],
              'v', markersize=10, color='k')
 
 
