@@ -32,7 +32,7 @@ Exponential Moving Average or Exponentially Weighted Moving Average(EMA) is an i
 
 \section*{Motivations and Measures}
 
-Like SMA, EMA functions over a rolling window, however it is calculated differently. Mathematically this equation can be defined as  $F_i = F_{i-1} +\alpha(X_i - F_{i-1})$(James FE). $F_i$ is the value associated with the moving average at period 0, $\alpha$ is the smoothing constant, and $X_i$ is the closing prices of the security at period i. In words, the EMA is found by multiplying the close subtracted by EMA from the previous day times a multiplier plus that prior day's average. This makes this measure far more weighted towards recent prices than SMA. 
+Like SMA, EMA functions over a rolling window, however it is calculated differently. Mathematically this equation can be defined as  $F_i = F_{i-1} +\alpha(X_i - F_{i-1})$\cite{James1968}. $F_i$ is the value associated with the moving average at period 0, $\alpha$ is the smoothing constant, and $X_i$ is the closing prices of the security at period i. In words, the EMA is found by multiplying the close subtracted by EMA from the previous day times a multiplier plus that prior day's average. This makes this measure far more weighted towards recent prices than SMA. 
 
 \section*{Key Techniques}
 
