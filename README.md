@@ -4,10 +4,9 @@ Github Repo of everything related to my algorithmic trading indpendent study thi
 Check out the summary paper for my research thus far. 
 
 ### Implementation:
-In Progress: Bollinger Bands, EMA
+In Progress: Bollinger Bands
 
-Completed: SMA
+Completed: EMA,SMA
 
 ### To Do:
-Download csv data of stocks so don't have to hit quandl everytime (S L O W)
 

@@ -5,8 +5,8 @@ import numpy as np
 from algorithmictrading.stockData.getStock import stockDataRetriever
 
 
-def execute(stock_name, start_date, end_date):
-    stock = stockDataRetriever(stock_name, start_date, end_date).getStock()
+def execute(stock_name, start_date, end_date, fetchStocks):
+    stock = stockDataRetriever(stock_name, start_date, end_date).fetchStock(fetchStocks)
 
     # Initialize the short and long windows and buy sell in df
     short_window = 40
@@ -27,6 +27,8 @@ def execute(stock_name, start_date, end_date):
     share_amount = 100
     initial_capital = float(100000.0)
 
+
+
     # create a portfolio that simulates owning and buying stocks
     positions = pd.DataFrame(index=df.index).fillna(0.0)
     positions[stock_name] = share_amount*df['signal']
@@ -42,14 +44,17 @@ def execute(stock_name, start_date, end_date):
     baseline_profit = (stock['Adj. Close'].iloc[-1] - stock['Adj. Close'].iloc[0])*share_amount
     strategy_profit = portfolio['total'].iloc[-1] - initial_capital
     print(baseline_profit, strategy_profit)
-    percentage_difference_profit = round((float(strategy_profit - baseline_profit)) / initial_capital * 100, 2)
-
-
+    if strategy_profit < baseline_profit:
+        percentage_difference_profit = round((float(strategy_profit - abs(baseline_profit))) / initial_capital * 100, 2)
+    else:
+        percentage_difference_profit = round((float(strategy_profit - baseline_profit)) / initial_capital * 100, 2)
+    # print out sharpe ratio
+    # sharpe_ratio(portfolio['returns'])
 
     fig = plt.figure()
-    fig.suptitle(stock_name)
+    fig.suptitle(stock_name + ": SMA")
     ax1 = fig.add_subplot(111,  ylabel='Price in $')
-    
+
     stock['Close'].plot(ax=ax1, color='r', lw=2.)
     df[['short_mavg', 'long_mavg']].plot(ax=ax1, lw=2.)
     # Plot the buy and sell df
@@ -61,5 +66,8 @@ def execute(stock_name, start_date, end_date):
              'v', markersize=10, color='k')
 
 
-    # Show the plot
     return plt, percentage_difference_profit
+
+def sharpe_ratio(returns):
+    window = 180  # 6 month rolling sharpe ratio
+    print(np.sqrt(window) * returns.mean() / returns.std())

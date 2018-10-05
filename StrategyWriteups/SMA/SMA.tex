@@ -18,7 +18,7 @@
 
 \begin{document}
 \thispagestyle{plain}
-\noindent{Algorithmic-Trading Summary --- Fall 2018}
+\noindent{Algorithmic-Trading --- Fall 2018}
 
 \noindent{Alex Thomas}
 
@@ -75,7 +75,7 @@ def execute(stock, start_date, end_date):
     df = pd.DataFrame(index=stock.index)
 
     # Create short and long simple moving average 
-    df['short_movin_average'] = df.movingWindow(short_window)
+    df['short_moving_average'] = df.movingWindow(short_window)
     df['long_moving_average'] = df.movingWindow(long_window)
     
     # mark signal based on comparison of the two averages
