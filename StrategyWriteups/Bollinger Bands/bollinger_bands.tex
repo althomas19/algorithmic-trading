@@ -28,11 +28,11 @@
 
 \section*{Introduction }
 
-Bollinger Bands were introduced by John Bollinger in the 1980s. They provide a relative definition for high and low stock prices. This strategy uses 3 bands, with the 2 outer bands derived from a std deviation of the moving average. This is a momentum trading strategy, as the closing price moving between each band creates different buy or sell incentives. 
+Bollinger Bands were introduced by John Bollinger in the 1980s. They provide a relative definition for high and low stock prices. This strategy uses 3 bands, with the 2 outer bands derived from a standard deviation of the moving average. This is a momentum trading strategy, as the closing price moving between each band creates different buy or sell incentives. 
 
 \section*{Motivations and Measures}
 
-Bollinger bands are great measures of market conditions of a particular security. Just like the previously examined techniques, the method uses a simple moving average for its middle band. The upper and lower bands are separated by the a positive and negative difference in std deviations using the middle band as a base. Precisley, the upper band is calculated by adding $2 * $period standard deviation and the lower by subtracting this amount. Because of this use of standard deviation, which is determined by market volatility, Bollinger Bands adjust themselves to market conditions. When the market is more volatile the bands widen and when the market becomes less erratic, the bands move closer together \cite{Liu2006}. Unlike the previous techniques, this strategy uses market conditions to evaluate trading orders.
+Bollinger bands are great measures of market conditions of a particular security. Just like the previously examined techniques, the method uses a simple moving average for its middle band. The upper and lower bands are separated by a positive and negative difference in std deviations using the middle band as a base. Precisely, the upper band is calculated by adding $2 * $period standard deviation and the lower by subtracting this amount. Because of this use of standard deviation, which is determined by market volatility, Bollinger Bands adjust themselves to market conditions. When the market is more volatile the bands widen and when the market becomes less erratic, the bands move closer together \cite{Liu2006}. Unlike the previous techniques, this strategy uses market conditions to evaluate trading orders.
 
 \section*{Key Techniques}
 
@@ -47,19 +47,19 @@ This strategy is implemented with these 3 bands as mentioned above. For our impl
 \section*{Analysis}
 
 \subsection*{Effectiveness}
-Similar to our previous strategies, buy and sell signals are reliant on changes in rolling average prices. However, because of the incorporation of standard deviation, this strategy uses volatility in the market to further base buy and sell decisions. See Figure 1 to see how the strategy works.
+Similar to our previous strategies, buy and sell signals are reliant on changes in rolling average prices. However, because of the incorporation of standard deviation, this strategy uses volatility in the market to further base buy and sell decisions. Because of this different measure, we should expect to see this strategy be very effective. See Figure 1 to see how the strategy works when run on GOOG. 
 
 \subsection*{Runtime}
 The components to consider for this strategy include pulling stock data into a Pandas data frame and calculating rolling means from the data-frame and marking their differences. Pandas is a python data analysis package and is perhaps the most powerful open source data analysis or manipulation tool available. For each calculation, it has to scrape through the entire data-frame at a rolling window, giving a linear runtime.
 
 \subsection*{Quality Metric}
-The strategy is tested against a baseline long position of 100 shares of a given stock. Therefore, we compare the strategy against simply buying 100 shares of stock right at the opening date and then sell at the final date. For our implementation, over 15 different stocks were chosen and run against this baseline. TBD?
+The strategy is tested against a baseline long position of 100 shares of a given stock. Therefore, we compare the strategy against simply buying 100 shares of stock right at the opening date and then sell at the final date. For our implementation, over 15 different stocks were chosen and run against this baseline. Compared to previous results, this strategy had by far and away the best performance. While a significant portion of the chosen stocks didn't end up actually out performing the baseline, a majority of them were within 1-2 percent performance of the baseline and outperformed the previously implemented strategies. Unlike SMA and EMA, Bollinger Bands consistently were close to the baseline if not outperforming it. 33\% of stocks  out performed the baseline. Most notably, GOOG outperformed the baseline by 2.77\% while the implementations of SMA and EMA had abysmal performances of -30.25\% and -19.41\% respectively. Overall, this strategy has by far and away the best performance of any strategy previously examined.
 
-\subsection*{Space / Memory implications}
+\subsection*{Space / Memory Implications}
 The only space for Bollinger Bands required is the data-frame, which is very reasonable.
 
 \section*{Conclusion}
-TBD once quality metric is implemented
+Bollinger Bands prove to be a very effective and successful strategy across the board. The strategies use of standard deviation to measure volatility of a particular stock's pricing over the sliding window gives this strategy an edge. While the results of the strategy aren't overwhelmingly impressive, the positive gains over the baselines are very encouraging.
 
 \section*{Implementation}
 \begin{verbatim}
