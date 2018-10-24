@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{Fu2009}
+Xing Fu and Avinash Patra.
+\newblock {Machine Learning in Statistical Arbitrage}.
+\newblock Technical report, 2009.
+
+\bibitem{Gatev2006}
+Evan Gatev, William Goetzmann, and Geert Rouwenhorst.
+\newblock {Pairs Trading: Performance of a Relative-Value Arbitrage Rule}.
+\newblock {\em The Review of Financial Studies}, 19(3):797--827, 2006.
+
+\end{thebibliography}

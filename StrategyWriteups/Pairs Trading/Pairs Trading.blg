@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Pairs Trading.aux
+The style file: plain.bst
+Database file #1: References.bib
+Warning--empty institution in Fu2009
+You've used 2 entries,
+            2118 wiz_defined-function locations,
+            510 strings with 4278 characters,
+and the built_in function-call counts, 617 in all, are:
+= -- 60
+> -- 31
+< -- 0
++ -- 12
+- -- 10
+* -- 46
+:= -- 115
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 19
+empty$ -- 43
+format.name$ -- 10
+if$ -- 119
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 9
+preamble$ -- 1
+purify$ -- 9
+quote$ -- 0
+skip$ -- 13
+stack$ -- 0
+substring$ -- 35
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 1
+while$ -- 6
+width$ -- 3
+write$ -- 23
+(There was 1 warning)

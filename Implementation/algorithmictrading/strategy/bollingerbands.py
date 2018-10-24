@@ -59,8 +59,6 @@ def execute(stock_name, start_date, end_date, fetchStocks):
     portfolio['total'] = portfolio['cash'] + portfolio['holdings']
     portfolio['returns'] = portfolio['total'].pct_change()
 
-    portfolio.to_csv(stock_name[5:] + '.csv')
-
     # compare against baseline long position
     baseline_profit = (stock['Adj. Close'].iloc[-1] - stock['Adj. Close'].iloc[0])*share_amount
     strategy_profit = portfolio['total'].iloc[-1] - initial_capital

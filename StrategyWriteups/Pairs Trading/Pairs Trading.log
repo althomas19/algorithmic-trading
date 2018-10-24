@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 OCT 2018 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  23 OCT 2018 21:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**bollinger_bands.tex
-(./bollinger_bands.tex
+**"Pairs Trading.tex"
+(./Pairs Trading.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -280,8 +280,12 @@ Package: cite 2015/02/27  v 5.5
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
 
-(./bollinger_bands.aux)
-\openout1 = `bollinger_bands.aux'.
+(./Pairs Trading.aux
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+)
+\openout1 = `"Pairs Trading.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
@@ -393,22 +397,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+<Intc_msft_signals.png, id=1, 577.15625pt x 444.66125pt>
+File: Intc_msft_signals.png Graphic file (type png)
 
-(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<Goog_Bbands.png, id=1, 620.3175pt x 458.71375pt>
-File: Goog_Bbands.png Graphic file (type png)
- <use Goog_Bbands.png>
-Package pdftex.def Info: Goog_Bbands.png used on input line 43.
-(pdftex.def)             Requested size: 256.0748pt x 189.36174pt.
+<use Intc_msft_signals.png>
+Package pdftex.def Info: Intc_msft_signals.png used on input line 45.
+(pdftex.def)             Requested size: 256.0748pt x 197.29352pt.
+ <zscore.png, id=3, 567.11874pt x 424.58624pt>
+File: zscore.png Graphic file (type png)
 
-[1
+<use zscore.png>
+Package pdftex.def Info: zscore.png used on input line 51.
+(pdftex.def)             Requested size: 256.0748pt x 191.72285pt.
+ [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
@@ -417,34 +418,45 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./Goog_Bbands.png>] (./bollinger_bands.bbl
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
-) [3] (./bollinger_bands.aux) )
+[2 <./Intc_msft_signals.png> <./zscore.png>]
+LaTeX Font Info:    Try loading font information for U+msa on input line 64.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 64.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [3]
+(./Pairs Trading.bbl) [4] (./Pairs Trading.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5040 strings out of 492995
- 71289 string characters out of 6132704
- 167878 words of memory out of 5000000
- 8510 multiletter control sequences out of 15000+600000
+ 5046 strings out of 492995
+ 71378 string characters out of 6132704
+ 168920 words of memory out of 5000000
+ 8515 multiletter control sequences out of 15000+600000
  10320 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,10n,43p,1057b,3488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,10n,43p,1101b,3606s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+m/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on bollinger_bands.pdf (3 pages, 221911 bytes).
+Output written on "Pairs Trading.pdf" (4 pages, 262054 bytes).
 PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 46 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

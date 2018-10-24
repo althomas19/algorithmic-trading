@@ -66,19 +66,19 @@ Bollinger Bands prove to be a very effective and successful strategy across the 
 def execute(stock, start_date, end_date):
     stock = stockDataRetriever(stock, start_date, end_date).getStock()
 
-    # Initialize the short and long windows and buy sell in df
+    # Initialize the window
     window = 12
 
     # set Pandas df with stock data
     df = pd.DataFrame(index=stock.index)
 
-    # Create short and long simple moving average
+    # Create the bollinger bands
     df['middle_band] = df.sma(window)
     df['moving_deviation'] = df.std(window)
     df['upper_band'] = df['middle_band'] + df['moving_deviation'] * 2
     df['lower_band'] = df['middle_band'] - df['moving_deviation'] * 2
 
-    # mark signal based on comparison of the two averages
+    # mark signal based on when price moves above or below lower or upper bands
     df[signal] = df.compare((df_closing_price, df_lower band), 
     		     (df_closing_price, df_upper_band),1,0)
 

@@ -43,7 +43,6 @@ def execute(stock_name, start_date, end_date, fetchStocks):
     # compare against baseline long position
     baseline_profit = (stock['Adj. Close'].iloc[-1] - stock['Adj. Close'].iloc[0])*share_amount
     strategy_profit = portfolio['total'].iloc[-1] - initial_capital
-    print(baseline_profit, strategy_profit)
     if strategy_profit < baseline_profit:
         percentage_difference_profit = round((float(strategy_profit - abs(baseline_profit))) / initial_capital * 100, 2)
     else:
