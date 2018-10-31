@@ -6,9 +6,14 @@ Check out the summary paper for my research thus far.
 See the Strategy Writeups to see the effectiveness and notes about each of the implemented strategies.
 
 ### Implementation:
-In Progress: Pairs Trading!!!
+In Progress: RSI / MACD
 
-Completed: EMA,SMA, Bollinger Bands
+Completed: EMA, SMA, Bollinger Bands, Pairs Trading, RSI
 
-### To Do:
+### Running Code:
+`cd algorithmictrading/Implementation`
+
+`python3 driver.py`
+
+Note: Explore driver to see different options to run code, show graphs etc.
 
