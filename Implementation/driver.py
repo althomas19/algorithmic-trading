@@ -1,7 +1,9 @@
-from algorithmictrading.strategy import sma, ema, bollingerbands, pairstrading, relativestrengthindex
+from algorithmictrading.strategy import sma, ema, bollingerbands, pairstrading, relativestrengthindex, rsi_macd
 
 stock_tickers = ["WIKI/AAPL", "WIKI/GOOG", "WIKI/DIS", 'WIKI/FB', 'WIKI/INTC', 'WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/AAL', 'WIKI/PYPL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/VOD', 'WIKI/MNST']
 fetch_stocks = False  # if array of stockTickers updated run driver with this set to true, will download csv
+stock_tickers_pairs_trading = ["WIKI/AAPL", "WIKI/DIS", 'WIKI/INTC', 'WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/AAL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/VOD', 'WIKI/MNST']
+pairs = [('WIKI/QCOM', 'WIKI/SBUX'), ('WIKI/INTC', 'WIKI/MSFT'), ('WIKI/AMD', 'WIKI/SBUX'), ('WIKI/AMD', 'WIKI/EBAY'), ('WIKI/AMD', 'WIKI/VOD')]
 
 
 def momentum_strategies():
@@ -29,9 +31,8 @@ def momentum_strategies():
     #     plot.show()
 
 
-stock_tickers_pairs_trading = ["WIKI/AAPL", "WIKI/DIS", 'WIKI/INTC', 'WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/AAL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/VOD', 'WIKI/MNST']
-pairs = [('WIKI/QCOM', 'WIKI/SBUX'), ('WIKI/INTC', 'WIKI/MSFT'), ('WIKI/AMD', 'WIKI/SBUX'), ('WIKI/AMD', 'WIKI/EBAY'), ('WIKI/AMD', 'WIKI/VOD')]
-#pairs = [('WIKI/INTC', 'WIKI/MSFT')]
+def intraday_strategies():
+    rsi_macd.execute()
 
 
 def pairs_strategy():
@@ -60,6 +61,7 @@ def pairs_cointegration():
     # ('WIKI/AMD', 'WIKI/VOD', 0.037477501569076914)
 
 if __name__ == '__main__':
-    momentum_strategies()
+    #momentum_strategies()
     #pairs_strategy()
     #pairs_cointegration()
+    intraday_strategies()
