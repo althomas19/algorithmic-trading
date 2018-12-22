@@ -1,0 +1,74 @@
+\begin{thebibliography}{10}
+
+\bibitem{Aldridge2010}
+Irene Aldridge.
+\newblock {\em {High-Frequency Trading}}.
+\newblock John Wiley and Sons, Hoboken, New Jersey, 1st edition, 2010.
+
+\bibitem{AlmeidaTeixeira}
+Lamartine {Almeida Teixeira}, Adriano Lorena, and In{\'{a}}cio {De Oliveira}.
+\newblock {A method for automatic stock trading combining technical analysis
+  and nearest neighbor classification}.
+
+\bibitem{Bendtsen2016}
+Marcus Bendtsen, Jose~M Pe{\~{n}}a, and Gated Bayesian.
+\newblock {Gated Bayesian Networks for Algorithmic Trading}.
+\newblock {\em International Journal of Approximate Reasoning}, (69):58--80,
+  2016.
+
+\bibitem{Chaboud2009}
+Alain Chaboud, Benjamin Chiquoine, Erik Hjalmarsson, Clara Vega, Gordon Bodnar,
+  Charles Jones, Luis Marques, Dag{\ldots}nn Rime, Alec Schmidt, John Schoen,
+  and Noah Sto¤man.
+\newblock {Rise of the Machines: Algorithmic Trading in the Foreign Exchange
+  Market}.
+\newblock Technical report, 2009.
+
+\bibitem{Chong2014}
+Terence Chong, Wing-Kam Ng, Venus Liew, Terence Tai-Leung Chong, Wing-Kam Ng,
+  and Venus Khim-Sen Liew.
+\newblock {Revisiting the Performance of MACD and RSI Oscillators}.
+\newblock {\em Journal of Risk and Financial Management}, 7(1):1--12, feb 2014.
+
+\bibitem{Ehlers}
+John Ehlers.
+\newblock {SIGNAL ANALYSIS CONCEPTS}.
+\newblock Technical report.
+
+\bibitem{Fu2009}
+Xing Fu and Avinash Patra.
+\newblock {Machine Learning in Statistical Arbitrage}.
+\newblock Technical report, 2009.
+
+\bibitem{Gatev2006}
+Evan Gatev, William Goetzmann, and Geert Rouwenhorst.
+\newblock {Pairs Trading: Performance of a Relative-Value Arbitrage Rule}.
+\newblock {\em The Review of Financial Studies}, 19(3):797--827, 2006.
+
+\bibitem{Gomber2011}
+Peter Gomber, Bj{\"{o}}rn Arndt, Marco Lutat, and Tim Uhle.
+\newblock {POLICY PLATFORM White Paper High-Frequency Trading}.
+\newblock Technical report, 2011.
+
+\bibitem{James1968}
+F~E James.
+\newblock {Monthly Moving Averages--An Effective Investment Tool?}
+\newblock {\em The Journal of Financial and Quantitative Analysis},
+  3(3):315--326, 1968.
+
+\bibitem{Kirilenko2017}
+Andrei Kirilenko, Albert~S. Kyle, Mehrdad Samadi, and Tugkan Tuzun.
+\newblock {The Flash Crash: High-Frequency Trading in an Electronic Market}.
+\newblock {\em Journal of Finance}, 2017.
+
+\bibitem{Liu2006}
+Wei Liu, Xudong Huang, and Weian Zheng.
+\newblock {Black–Scholes' model and Bollinger bands}.
+\newblock {\em ScienceDirect}, 2006.
+
+\bibitem{Treleaven2013}
+Philip Treleaven, Michal Galas, and Vidhi Lalchand.
+\newblock {Algorithmic Trading Review}.
+\newblock 56(11), 2013.
+
+\end{thebibliography}

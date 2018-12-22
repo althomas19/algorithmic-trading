@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  11 DEC 2018 22:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 DEC 2018 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**EMA.tex
-(./EMA.tex
+**"Final .tex"
+(./Final .tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 84 language(s) loaded.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
@@ -277,23 +277,109 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen134
+\captionmargin@=\dimen135
+\captionwidth=\dimen136
+\caption@tempdima=\dimen137
+\caption@indent=\dimen138
+\caption@parindent=\dimen139
+\caption@hangindent=\dimen140
+)
+\c@ContinuedFloat=\count117
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+\c@subfigure=\count118
+\c@subtable=\count119
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./EMA.aux)
-\openout1 = `EMA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+(./Final .aux
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `sub@overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `sub@overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `sub@overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `sub@overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `sub@overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+)
+\openout1 = `"Final .aux"'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -331,16 +417,16 @@ LaTeX Font Info:    ... okay on input line 19.
 
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen134
+\scratchcounter=\count120
+\scratchdimen=\dimen141
 \scratchbox=\box40
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\nofMPsegments=\count121
+\nofMParguments=\count122
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen135
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen142
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
 \everyMPtoPDFconversion=\toks30
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
@@ -388,67 +474,183 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+[1
+
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<EMA_MSFT.png, id=1, 619.31375pt x 475.7775pt>
-File: EMA_MSFT.png Graphic file (type png)
- <use EMA_MSFT.png>
-Package pdftex.def Info: EMA_MSFT.png used on input line 43.
-(pdftex.def)             Requested size: 256.0748pt x 196.73251pt.
- [1
-
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 13.59999pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./EMA_MSFT.png>]
-Overfull \hbox (93.61638pt too wide) in paragraph at lines 86--86
+[2] <stock_table.png, id=14, 361.35pt x 455.7025pt>
+File: stock_table.png Graphic file (type png)
+ <use stock_table.png>
+Package pdftex.def Info: stock_table.png used on input line 67.
+(pdftex.def)             Requested size: 241.84842pt x 304.99922pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<SMA_Google.png, id=16, 581.17125pt x 447.6725pt>
+File: SMA_Google.png Graphic file (type png)
+ <use SMA_Google.png>
+Package pdftex.def Info: SMA_Google.png used on input line 78.
+(pdftex.def)             Requested size: 256.0748pt x 197.25658pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3] [4 <./stock_table.png> <./SMA_Google.png>]
+<EMA_MSFT.png, id=25, 619.31375pt x 475.7775pt>
+File: EMA_MSFT.png Graphic file (type png)
+ <use EMA_MSFT.png>
+Package pdftex.def Info: EMA_MSFT.png used on input line 100.
+(pdftex.def)             Requested size: 256.0748pt x 196.73251pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[5
+
+] <Goog_Bbands.png, id=34, 620.3175pt x 458.71375pt>
+File: Goog_Bbands.png Graphic file (type png)
+ <use Goog_Bbands.png>
+Package pdftex.def Info: Goog_Bbands.png used on input line 113.
+(pdftex.def)             Requested size: 256.0748pt x 189.36174pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6 <./EMA_MSFT.png>] <AAL_RSI_signals.png, id=39, 573.14125pt x 440.64626pt>
+File: AAL_RSI_signals.png Graphic file (type png)
+
+<use AAL_RSI_signals.png>
+Package pdftex.def Info: AAL_RSI_signals.png used on input line 128.
+(pdftex.def)             Requested size: 211.38832pt x 162.51883pt.
+ <AAL_RSI.png, id=40, 563.10374pt x 457.71pt>
+File: AAL_RSI.png Graphic file (type png)
+
+<use AAL_RSI.png>
+Package pdftex.def Info: AAL_RSI.png used on input line 132.
+(pdftex.def)             Requested size: 211.38832pt x 171.82242pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7 <./Goog_Bbands.png>] <AAPL_MACD.png, id=46, 611.28375pt x 460.72125pt>
+File: AAPL_MACD.png Graphic file (type png)
+
+<use AAPL_MACD.png>
+Package pdftex.def Info: AAPL_MACD.png used on input line 152.
+(pdftex.def)             Requested size: 211.38832pt x 159.3216pt.
+ <AAPL_RSIxMACD.png, id=47, 582.175pt x 444.66125pt>
+File: AAPL_RSIxMACD.png Graphic file (type png)
+
+<use AAPL_RSIxMACD.png>
+Package pdftex.def Info: AAPL_RSIxMACD.png used on input line 156.
+(pdftex.def)             Requested size: 211.38832pt x 161.45528pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[8 <./AAL_RSI_signals.png> <./AAL_RSI.png>] [9 <./AAPL_MACD.png> <./AAPL_RSIxMA
+CD.png>] <Intc_msft_signals.png, id=58, 577.15625pt x 444.66125pt>
+File: Intc_msft_signals.png Graphic file (type png)
+
+<use Intc_msft_signals.png>
+Package pdftex.def Info: Intc_msft_signals.png used on input line 177.
+(pdftex.def)             Requested size: 211.38832pt x 162.85976pt.
+ <zscore.png, id=59, 567.11874pt x 424.58624pt>
+File: zscore.png Graphic file (type png)
+
+<use zscore.png>
+Package pdftex.def Info: zscore.png used on input line 181.
+(pdftex.def)             Requested size: 211.38832pt x 158.2606pt.
+ [10 <./Intc_msft_signals.png> <./zscore.png>]
+<momentumstrategiesreturns.png, id=65, 594.5412pt x 357.4956pt>
+File: momentumstrategiesreturns.png Graphic file (type png)
+
+<use momentumstrategiesreturns.png>
+Package pdftex.def Info: momentumstrategiesreturns.png used on input line 208.
+(pdftex.def)             Requested size: 422.77664pt x 254.2164pt.
+ [11 <./momentumstrategiesreturns.png>]
+<rsimacdresults.png, id=70, 652.839pt x 333.4056pt>
+File: rsimacdresults.png Graphic file (type png)
+ <use rsimacdresults.png>
+Package pdftex.def Info: rsimacdresults.png used on input line 221.
+(pdftex.def)             Requested size: 422.77664pt x 215.91743pt.
+
+[12 <./rsimacdresults.png>]
+<pairstradingresults.png, id=75, 679.8198pt x 320.8788pt>
+File: pairstradingresults.png Graphic file (type png)
+
+<use pairstradingresults.png>
+Package pdftex.def Info: pairstradingresults.png used on input line 234.
+(pdftex.def)             Requested size: 422.77664pt x 199.54993pt.
+ [13 <./pairstradingresults.png>]
+Overfull \hbox (93.61638pt too wide) in paragraph at lines 300--300
 []    \OT1/cmtt/m/n/10.95 df[signal] = df.compare(short_exponential_moving_aver
 age, long_exponential_moving_average,1,0)[] 
  []
 
-(./EMA.bbl) [3] (./EMA.aux) )
+[14] [15] (./Final .bbl
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ¤ in font cmr10!
+ [16]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+) [17] (./Final .aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5040 strings out of 492995
- 71144 string characters out of 6132704
- 167878 words of memory out of 5000000
- 8510 multiletter control sequences out of 15000+600000
+ 6260 strings out of 492995
+ 93351 string characters out of 6132704
+ 192995 words of memory out of 5000000
+ 9706 multiletter control sequences out of 15000+600000
  10320 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,10n,43p,1024b,3608s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,11n,43p,1328b,4580s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
-b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
->
-Output written on EMA.pdf (3 pages, 153299 bytes).
+m/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+
+Output written on "Final .pdf" (17 pages, 1315324 bytes).
 PDF statistics:
- 57 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

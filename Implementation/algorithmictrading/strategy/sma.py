@@ -5,7 +5,7 @@ import numpy as np
 from algorithmictrading.stockData.getStock import stockDataRetriever
 
 
-def execute(stock_name, start_date, end_date, fetchStocks):
+def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
     stock = stockDataRetriever(stock_name, start_date, end_date).fetchStock(fetchStocks)
 
     # Initialize the short and long windows and buy sell in df
@@ -24,7 +24,7 @@ def execute(stock_name, start_date, end_date, fetchStocks):
     # when signal changes fromn 1 to 0 or 0 to 1 - is a buy or sell
     df['positions'] = df['signal'].diff()
 
-    share_amount = 100
+    #share_amount = 100
     initial_capital = float(100000.0)
 
 
@@ -47,6 +47,8 @@ def execute(stock_name, start_date, end_date, fetchStocks):
         percentage_difference_profit = round((float(strategy_profit - abs(baseline_profit))) / initial_capital * 100, 2)
     else:
         percentage_difference_profit = round((float(strategy_profit - baseline_profit)) / initial_capital * 100, 2)
+
+    print(baseline_profit, strategy_profit)
     # print out sharpe ratio
     # sharpe_ratio(portfolio['returns'])
 

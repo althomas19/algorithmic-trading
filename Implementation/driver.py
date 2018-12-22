@@ -8,24 +8,25 @@ pairs = [('WIKI/QCOM', 'WIKI/SBUX'), ('WIKI/INTC', 'WIKI/MSFT'), ('WIKI/AMD', 'W
 
 def momentum_strategies():
     plots = []
-
+    denominations = [10, 100, 1000]
     for stock in stock_tickers:
-        plot, percent_performance_sma = sma.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks)
-        plots.append(plot)
+        for denom in denominations:
+            plot, percent_performance_sma = sma.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks, denom)
+            plots.append(plot)
 
-        plot, percent_performance_ema = ema.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks)
-        plots.append(plot)
+            plot, percent_performance_ema = ema.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks, denom)
+            plots.append(plot)
 
-        plot, percent_performance_bbands = bollingerbands.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks)
-        plots.append(plot)
+            plot, percent_performance_bbands = bollingerbands.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks, denom)
+            plots.append(plot)
 
-        percent_performance_rsi, plot = relativestrengthindex.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks)
-        plots.append(plot)
+            percent_performance_rsi, plot = relativestrengthindex.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks, denom)
+            plots.append(plot)
 
-        print(stock, "SMA", percent_performance_sma)
-        print(stock, "EMA", percent_performance_ema)
-        print(stock, "Bollinger Bands", percent_performance_bbands)
-        print(stock, "RSI", percent_performance_rsi)
+            print(stock, denom, "SMA", percent_performance_sma)
+            print(stock, denom, "EMA", percent_performance_ema)
+            print(stock, denom, "Bollinger Bands", percent_performance_bbands)
+            print(stock, denom, "RSI", percent_performance_rsi)
 
     # for plot in plots:
     #     plot.show()
@@ -61,7 +62,7 @@ def pairs_cointegration():
     # ('WIKI/AMD', 'WIKI/VOD', 0.037477501569076914)
 
 if __name__ == '__main__':
-    #momentum_strategies()
+    momentum_strategies()
     #pairs_strategy()
     #pairs_cointegration()
-    intraday_strategies()
+    #intraday_strategies()

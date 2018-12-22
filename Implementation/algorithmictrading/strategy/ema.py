@@ -5,7 +5,7 @@ import numpy as np
 from algorithmictrading.stockData.getStock import stockDataRetriever
 
 
-def execute(stock_name, start_date, end_date, fetchStocks):
+def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
     stock = stockDataRetriever(stock_name, start_date, end_date).fetchStock(fetchStocks)
 
     short_window = 50
@@ -35,7 +35,7 @@ def execute(stock_name, start_date, end_date, fetchStocks):
              df.short_ema[df.positions == -1.0],
              'v', markersize=10, color='k')
 
-    share_amount = 100
+    #share_amount = 100
     initial_capital = float(100000.0)
 
     positions = pd.DataFrame(index=df.index).fillna(0.0)

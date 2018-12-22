@@ -16,8 +16,14 @@ def execute():
         # merge rsi and macd strategies
         df = pd.merge(rsi_df, macd_df)
 
-        # create buy and sell signals 
-        df['positions'] = np.where((df['signal_rsi'] == 1) & (df['signal_macd'] == 1), 1, 0)
+        # scan over 3 periods to find common buy signals
+        for i in range(3,len(df)):
+            if (scan_buy_signal(df['signal_rsi'][i-3:i])) and (scan_buy_signal(df['signal_macd'][i-3:i])):
+                df['positions'][i] = 1
+            else:
+                df['positions'][i] = 0
+
+        # create sell signals 
         sell = np.where((df['signal_rsi'] == -1) | (df['signal_macd'] == -1), -1, 0)
         df['positions'] += sell
 
@@ -29,16 +35,20 @@ def execute():
         ax1.plot(df.loc[df.positions == 1].index, df.Close[df.positions == 1], '^', markersize=10, color='g')
         ax1.plot(df.loc[df.positions == -1].index, df.Close[df.positions == -1], 'v', markersize=10, color='r')
 
-        #df.to_csv("merged.csv")
-        profit(df, name)
-
-    #plt.show()
+        for denom in [10,100,1000]:
+            profit(df, name, denom)
 
 
-def profit(df, name):
+def scan_buy_signal(signal):
+    for val in signal.tolist():
+        if val > 0:
+            return True
+    return False
+
+
+def profit(df, name, denom):
     base = 100000
     money = base
-    denom = 100
     shares = 0
 
     for i in range(len(df)):
@@ -52,9 +62,10 @@ def profit(df, name):
     overall_return = shares * df['Close'][i] + money
 
     percent_return = (overall_return-base)/base * 100
-    baseline = (df['Close'][i] - df['Close'][0]) / df['Close'][0] * 100
+    #baseline = (df['Close'][i] - df['Close'][0]) / df['Close'][0] * 100
+    baseline = (df['Close'][i] - df['Close'][0]) * denom
 
-    print(name, "Strategy :", percent_return, "Hold: ", baseline)
+    print(name, "return:", overall_return-base, "Hold: ", baseline, "percent return:", percent_return)
 
 
 
