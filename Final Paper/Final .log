@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  21 DEC 2018 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  29 JAN 2019 19:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -605,16 +605,15 @@ File: pairstradingresults.png Graphic file (type png)
 <use pairstradingresults.png>
 Package pdftex.def Info: pairstradingresults.png used on input line 234.
 (pdftex.def)             Requested size: 422.77664pt x 199.54993pt.
- [13 <./pairstradingresults.png>]
-Overfull \hbox (93.61638pt too wide) in paragraph at lines 300--300
+ [13 <./pairstradingresults.png>] [14]
+Overfull \hbox (93.61638pt too wide) in paragraph at lines 303--303
 []    \OT1/cmtt/m/n/10.95 df[signal] = df.compare(short_exponential_moving_aver
 age, long_exponential_moving_average,1,0)[] 
  []
 
-[14] [15] (./Final .bbl
+[15] [16] (./Final .bbl
 Missing character: There is no Â in font cmr10!
 Missing character: There is no ¤ in font cmr10!
- [16]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
@@ -647,7 +646,7 @@ pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
 
-Output written on "Final .pdf" (17 pages, 1315324 bytes).
+Output written on "Final .pdf" (17 pages, 1316910 bytes).
 PDF statistics:
  130 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream

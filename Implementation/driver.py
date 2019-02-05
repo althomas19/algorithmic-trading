@@ -1,4 +1,4 @@
-from algorithmictrading.strategy import sma, ema, bollingerbands, pairstrading, relativestrengthindex, rsi_macd
+from algorithmictrading.strategy import sma, ema, bollingerbands, pairstrading, relativestrengthindex, rsi_macd, twitter_sentiment
 
 stock_tickers = ["WIKI/AAPL", "WIKI/GOOG", "WIKI/DIS", 'WIKI/FB', 'WIKI/INTC', 'WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/AAL', 'WIKI/PYPL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/VOD', 'WIKI/MNST']
 fetch_stocks = False  # if array of stockTickers updated run driver with this set to true, will download csv
@@ -61,8 +61,12 @@ def pairs_cointegration():
     # ('WIKI/AMD', 'WIKI/EBAY', 0.027462171694469979)
     # ('WIKI/AMD', 'WIKI/VOD', 0.037477501569076914)
 
+def twitter_sentiment_strategy():
+    twitter_sentiment.execute()
+
 if __name__ == '__main__':
-    momentum_strategies()
+    #momentum_strategies()
     #pairs_strategy()
     #pairs_cointegration()
     #intraday_strategies()
+    twitter_sentiment_strategy()
