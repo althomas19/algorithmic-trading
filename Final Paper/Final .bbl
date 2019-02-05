@@ -71,4 +71,10 @@ Philip Treleaven, Michal Galas, and Vidhi Lalchand.
 \newblock {Algorithmic Trading Review}.
 \newblock 56(11), 2013.
 
+\bibitem{Zhang2010}
+Wenbin Zhang and Steven Skiena.
+\newblock {Trading Strategies To Exploit Blog and News Sentiment}.
+\newblock {\em Proceedings of the 4th International Conference on Weblogs and
+  Social Media}, d:375--378, 2010.
+
 \end{thebibliography}
