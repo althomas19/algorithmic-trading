@@ -61,8 +61,10 @@ def pairs_cointegration():
     # ('WIKI/AMD', 'WIKI/EBAY', 0.027462171694469979)
     # ('WIKI/AMD', 'WIKI/VOD', 0.037477501569076914)
 
-def twitter_sentiment_strategy():
-    twitter_sentiment.execute()
+def twitter_sentiment_strategy(): # THESIS WORK!
+    stocks = ["WIKI/DIS"]
+    for stock in stocks:
+        twitter_sentiment.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks)
 
 if __name__ == '__main__':
     #momentum_strategies()

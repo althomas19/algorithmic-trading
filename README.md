@@ -1,14 +1,14 @@
 # Algorithmic Trading
 Github Repo of everything related to my algorithmic trading indpendent study this semester 
 
-Check out the summary paper for my research thus far. 
-
 See the Strategy Writeups to see the effectiveness and notes about each of the implemented strategies.
 
-### Implementation:
-In Progress: RSI / MACD
+See the Final Paper Writeup for a proposal/overview of everything studied thus far.
 
-Completed: EMA, SMA, Bollinger Bands, Pairs Trading, RSI
+### Implementation:
+In Progress: TWITTER TRADING! - Thesis contribution
+
+Completed: EMA, SMA, Bollinger Bands, Pairs Trading, RSI, RSI / MACD
 
 ### Running Code:
 `cd algorithmictrading/Implementation`
