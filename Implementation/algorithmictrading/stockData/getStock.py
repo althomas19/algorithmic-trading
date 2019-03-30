@@ -14,12 +14,9 @@ class stockDataRetriever:
         return quandl.get(self.stock, start_date=self.start_date, end_date=self.end_date, returns="pandas")
 
     def getStockCSV(self):
-        return quandl.get(self.stock, start_date=self.start_date, end_date=self.end_date, returns="pandas").to_csv(self.stock[5:] + ".csv")
+        return quandl.get(self.stock, start_date=self.start_date, end_date=self.end_date, returns="pandas").to_csv("./stockCSV/" + self.stock[5:] + ".csv")
 
     def fetchStock(self, fetchStocks):
         if (fetchStocks):
             self.getStockCSV()
-            stock = pd.read_csv("./" + self.stock[5:] + ".csv")
-        else:
-            stock = pd.read_csv("./stockCSV/" + self.stock[5:] + ".csv")
-        return stock
+        return pd.read_csv("./stockCSV/" + self.stock[5:] + ".csv")
