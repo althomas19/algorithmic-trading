@@ -118,9 +118,10 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
     first_tweet = row.Index 
     #pre_df = df[first_tweet:].drop(["Date", "twitter", "Ex-Dividend", "Split Ratio"], axis=1) # get rid of strings
     #pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
-    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
-    pre_df["SMA"] = pre_df['Close'].rolling(window=60, min_periods=1, center=False).mean()
-    pre_df["EMA"] = pre_df['Close'].ewm(span=40, adjust=False).mean()
+    # pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
+    # # pre_df["SMA"] = pre_df['Close'].rolling(window=60, min_periods=1, center=False).mean()
+    # # pre_df["EMA"] = pre_df['Close'].ewm(span=40, adjust=False).mean()
+    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "change", "change_int"]]
     pre_df["change_predicted"] = 0
     # scaler = MinMaxScaler()
     # x_scaled = scaler.fit_transform(pre_df)
@@ -128,10 +129,10 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
     scaler = MinMaxScaler()
     x_scaled = scaler.fit_transform(pre_df["avg_sentiment"].reshape(-1,1))
     pre_df["avg_sentiment"] = x_scaled
-    print(np.corrcoef(pre_df["avg_sentiment"],pre_df["Close"]))
-    print(np.corrcoef(pre_df["total_favorites"],pre_df["Close"]))
-    print(np.corrcoef(pre_df["total_retweets"],pre_df["Close"]))
-    print(np.corrcoef(pre_df["total_tweets"],pre_df["Close"]))
+    # print(np.corrcoef(pre_df["avg_sentiment"],pre_df["Close"]))
+    # print(np.corrcoef(pre_df["total_favorites"],pre_df["Close"]))
+    # print(np.corrcoef(pre_df["total_retweets"],pre_df["Close"]))
+    # print(np.corrcoef(pre_df["total_tweets"],pre_df["Close"]))
     print("testing effectiveness of", stock_name)
 
 
@@ -145,6 +146,7 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
     rf.fit(X,y)
     print(type(rf), rf.score(X,y)) # gives r2
     test["change_predicted"] = rf.predict(test)
+    test = test.reset_index(drop=True)
     #print(rf.predict(test))
     # test["change"] = 0
     # test["change_int"] = 0
@@ -165,9 +167,6 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
         DecisionTreeClassifier(),  # BY FAR THE BEST!
         KNeighborsClassifier(n_neighbors=3)]
         #QuadraticDiscriminantAnalysis()]
-    #clf = svm.SVC(gamma='scale') - DOESNT WORK
-
-    #clfs = [DecisionTreeClassifier()]
 
     for clf in clfs:
         clf.fit(X,y)
@@ -177,6 +176,7 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
         predicted_movement = clf.predict(test)
         #print(predicted_movement)
         test_profit["change_predicted"] = predicted_movement
+        test_profit = test_profit.reset_index(drop=True)
         # test_profit["change"] = 0
         # test_profit["change_int"] = 0
         # print(list(test_profit.columns.values))
@@ -185,17 +185,6 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
         # transformed.to_csv('test.csv')
         # profit(transformed, stock_name, type(clf))
         profit(test_profit, stock_name, type(clf))
-
-    # PLOT OUT AVE SENTIMENT, TWEETS, RT OVER CLOSING PRICE
-    # how does each feature correlate with eachother - does retweets have a correlation to change
-    # we think that there is skew in our sentiment data (its all positive)
-        #Normalize the sentiment?
-
-    # feed in stock data by itself -- visualize decision tree classifier
-    # then just twitter data
-
-    # Next step scrape data for 1 year for disney mentions -- look at that
-    # ADD MOVING AVERAGE
 
 def deep_learning_sentiment(df, stock_name):
     # Multiple input series LSTM
@@ -215,7 +204,7 @@ def deep_learning_sentiment(df, stock_name):
     data_train = dataset[0:int(len(dataset)*2/3), :]
     data_test = dataset[int(len(dataset)*2/3):len(dataset), :]
 
-    look_back = 60
+    look_back = 3
 
     x_train, y_train = [], []
     for i in range(look_back, len(data_train)):
@@ -248,11 +237,21 @@ def deep_learning_sentiment(df, stock_name):
     testScore = math.sqrt(mean_squared_error(test_df["Close"], predicted[:, 0]))
     print('Test Score of %s: %.2f RMSE' % (stock_name, testScore))
 
-    #test_df["predicted"] = predicted[:, 0]
-    #test_df.to_csv('test.csv') 
+    print(test_df.columns)
+
+    test_df["predicted"] = predicted[:, 0]
+    test_df = test_df.reset_index(drop=True)
+
+    for i, row in test_df.iterrows(): # THIS ISNT ACTUALLY WORKING!!!!
+        if test_df["Close"].iloc[i] < test_df["predicted"].iloc[i]:
+            change_predicted = 1
+        else:
+            change_predicted = -1
+        test_df.loc[i, "change_predicted"] = change_predicted
+
     # MAYBE LOOK TO FIX THE NP.RANDOMSEED
 
-    #profit(test_profit, stock_name, type(model))
+    profit(test_df, stock_name, type(model))
 
 
 def average_sentiment_other_values(df):
@@ -295,23 +294,26 @@ def tweet_sentiment(tweet):
 
 
 def profit(df, name, clf_type):
+
+    #df = df.dropna()
+
     bank = 1000
     base = 1000
     shares = 0
 
     baseline_shares = int(bank / df["Close"].iloc[0])
-    baseline_value = bank - int(bank / df["Close"].iloc[0])
+    baseline_value = bank - df["Close"].iloc[0]*baseline_shares
 
     for i, row in df.iterrows():
         if df["change_predicted"][i] > 0:
-            purchased = int(bank / df["Close"][i])
-            bank -= purchased * df["Close"][i]
+            purchased = int(float(bank) / df["Close"].iloc[i])
+            bank -= purchased * df["Close"].iloc[i]
             shares += purchased
         else:
-            bank += df["Close"][i] * shares
+            bank += float(df["Close"].iloc[i]) * shares
             shares = 0
         #print(bank, shares)
-    bank += df["Close"][i] * shares
+    bank += df["Close"].iloc[i] * shares
 
     baseline_value += baseline_shares * df["Close"].iloc[len(df) - 1]
 

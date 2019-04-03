@@ -62,8 +62,8 @@ def pairs_cointegration():
     # ('WIKI/AMD', 'WIKI/VOD', 0.037477501569076914)
 
 def twitter_sentiment_strategy():  # THESIS WORK!
-    #stocks = ["WIKI/DIS", "WIKI/FB", "WIKI/INTC",' WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/PYPL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/MNST', "WIKI/BIG", 'WIKI/COLM', 'WIKI/GOOGL', 'WIKI/NKE', 'WIKI/VOD']
-    stocks = ["WIKI/DIS","WIKI/FB", "WIKI/INTC",' WIKI/MSFT']
+    stocks = ["WIKI/DIS", "WIKI/FB", "WIKI/INTC",' WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/PYPL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/MNST', "WIKI/BIG", 'WIKI/COLM', 'WIKI/GOOGL', 'WIKI/NKE', 'WIKI/VOD']
+    #stocks = ["WIKI/DIS"]#,"WIKI/FB", "WIKI/INTC",' WIKI/MSFT']
     for stock in stocks:
         twitter_sentiment.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks)
 
