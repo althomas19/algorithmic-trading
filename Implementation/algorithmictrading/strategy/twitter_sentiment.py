@@ -11,12 +11,14 @@ from sklearn.model_selection import cross_val_score
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import svm
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.layers import LSTM
+# from keras.models import Sequential
+# from keras.layers import Dense
+# from keras.layers import LSTM
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
 import math
+import graphviz
+from sklearn import tree
 
 
 from algorithmictrading.stockData.getTweets import tweetDataRetriever
@@ -25,21 +27,17 @@ from algorithmictrading.stockData.getStock import stockDataRetriever
 ''' twitter part of df is grouped by 3 -- 0 = sentiment, 1= favorite count,
 2= retweet count '''
 def execute(stock_name, start_date, end_date, fetchStocks):
+    np.random.seed(1)
     if fetchStocks:  # build twitter sentiment and merge into stock data 
         df = build_df(stock_name, start_date, end_date)
     else:
         df = tweetDataRetriever(stock_name).fetch_merged_tweet()
 
     # create buy/sell signals using different techniques
-    #machine_learning_sentiment(df, stock_name)
-    deep_learning_sentiment(df, stock_name)
+    machine_learning_sentiment(df, stock_name)
+    #machine_learning_sentiment_boosted(df, stock_name)
+    #deep_learning_sentiment(df, stock_name)
 
-    # graph
-    # plot average tweet sentiment to rolling average of stock price -- to try to see if we can get good signals
-
-
-# create columns for average sentiment, num tweets,std dev? 
-# look through to see any sort of stock related announcement -- boolean for 
 
 def build_df(stock_name, start_date, end_date):
     # get tweet sentiment
@@ -94,16 +92,6 @@ def build_df(stock_name, start_date, end_date):
     df.to_csv("./twitterCSV/" + stock_name[5:] + "_MERGED.csv")
     return df
 
-''' basic twitter trading approach that sells when average
-sentiment is negative for the day and buys when > .25 '''
-def naive_sentiment(df):
-    df['signal'] = 0
-    for i in range(len(df)):
-        if df["avg_sentiment"][i] > .25:
-            df["signal"][i] = 1
-        elif df["avg_sentiment"][i] < 0:
-            df["signal"][i] = -1
-
 
 def machine_learning_sentiment(df, stock_name):  # model may see the trend for us!
     # SUPRESSES WARNINGS
@@ -116,19 +104,14 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
         if len(str(df["twitter"][row.Index])) > 3:
             break
     first_tweet = row.Index 
-    #pre_df = df[first_tweet:].drop(["Date", "twitter", "Ex-Dividend", "Split Ratio"], axis=1) # get rid of strings
-    #pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
-    # pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
-    # # pre_df["SMA"] = pre_df['Close'].rolling(window=60, min_periods=1, center=False).mean()
-    # # pre_df["EMA"] = pre_df['Close'].ewm(span=40, adjust=False).mean()
-    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "change", "change_int"]]
+    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
     pre_df["change_predicted"] = 0
-    # scaler = MinMaxScaler()
-    # x_scaled = scaler.fit_transform(pre_df)
-    # pre_df.loc[:,:] = x_scaled
+
     scaler = MinMaxScaler()
-    x_scaled = scaler.fit_transform(pre_df["avg_sentiment"].reshape(-1,1))
-    pre_df["avg_sentiment"] = x_scaled
+    pre_df["avg_sentiment"] = scaler.fit_transform(pre_df["avg_sentiment"].reshape(-1, 1))
+    pre_df["total_tweets"] = scaler.fit_transform(pre_df["total_tweets"].reshape(-1, 1))
+    pre_df["total_retweets"] = scaler.fit_transform(pre_df["total_retweets"].reshape(-1, 1))
+    pre_df["total_favorites"] = scaler.fit_transform(pre_df["total_favorites"].reshape(-1, 1))
     # print(np.corrcoef(pre_df["avg_sentiment"],pre_df["Close"]))
     # print(np.corrcoef(pre_df["total_favorites"],pre_df["Close"]))
     # print(np.corrcoef(pre_df["total_retweets"],pre_df["Close"]))
@@ -136,8 +119,9 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
     print("testing effectiveness of", stock_name)
 
 
+    ## Regressor ##
 
-    # Using Random Forest Regressor 
+
     train = pre_df[:int(len(pre_df)*2/3)].drop(["change_int"], axis=1)
     test = pre_df[-int(len(pre_df)*1/3):].drop(["change", "change_int"], axis=1)
     X = train.drop(["change"],axis=1)
@@ -147,20 +131,80 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
     print(type(rf), rf.score(X,y)) # gives r2
     test["change_predicted"] = rf.predict(test)
     test = test.reset_index(drop=True)
-    #print(rf.predict(test))
-    # test["change"] = 0
-    # test["change_int"] = 0
-    # transformed = pd.DataFrame(scaler.inverse_transform(test))
-    # transformed.columns = pre_df.columns
-    # profit(transformed, stock_name, type(rf))
+
     profit(test, stock_name, type(rf))
+
+    ## Classifiers ##
 
     train = pre_df[:int(len(pre_df)*2/3)].drop(["change"], axis=1)
     test = pre_df[-int(len(pre_df)*1/3):].drop(["change_int", "change"], axis=1)
     test_profit = test.copy(deep=True)
     X = train.drop(["change_int"], axis=1)
-    y = train["change_int"] # NEED TO USE INTS FOR THE NEURAL NETWORK STUFF
-    
+    y = train["change_int"]  # NEED TO USE INTS FOR THE NEURAL NETWORK STUFF
+
+    clfs = [
+        MLPClassifier(hidden_layer_sizes=(100, 100, 100), max_iter=500, alpha=0.0001, solver='sgd', verbose=10),
+        DecisionTreeClassifier(),
+        KNeighborsClassifier(n_neighbors=3)]
+
+    for clf in clfs:
+        clf.fit(X,y)
+        print(type(clf), cross_val_score(clf, X, y, scoring='accuracy').mean())
+        predicted_movement = clf.predict(test)
+        test_profit["change_predicted"] = predicted_movement
+        test_profit = test_profit.reset_index(drop=True)
+        profit(test_profit, stock_name, type(clf))
+
+        # visualizing decision tree
+        # data = tree.export_graphviz(clf, out_file=None)
+        # graph = graphviz.Source(data)
+        # graph.render("decision tree")
+
+def machine_learning_sentiment_boosted(df, stock_name):  # model may see the trend for us!
+    # SUPRESSES WARNINGS
+    def warn(*args, **kwargs):
+        pass
+    import warnings
+    warnings.warn = warn  
+    # find first tweet date
+    for row in df.itertuples():
+        if len(str(df["twitter"][row.Index])) > 3:
+            break
+    first_tweet = row.Index 
+    #pre_df = df[first_tweet:].drop(["Date", "twitter", "Ex-Dividend", "Split Ratio"], axis=1) # get rid of strings
+    #pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
+    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
+    pre_df["change_predicted"] = 0
+
+    scaler = MinMaxScaler()
+    pre_df["avg_sentiment"] = scaler.fit_transform(pre_df["avg_sentiment"].reshape(-1, 1))
+    pre_df["total_tweets"] = scaler.fit_transform(pre_df["total_tweets"].reshape(-1, 1))
+    pre_df["total_retweets"] = scaler.fit_transform(pre_df["total_retweets"].reshape(-1, 1))
+    pre_df["total_favorites"] = scaler.fit_transform(pre_df["total_favorites"].reshape(-1, 1))
+    print("testing effectiveness of", stock_name)
+
+
+    ## Regressor ##
+
+
+    train = pre_df[:int(len(pre_df)*2/3)].drop(["change_int"], axis=1)
+    test = pre_df[-int(len(pre_df)*1/3):].drop(["change", "change_int"], axis=1)
+    test_profit = test.copy(deep=True)
+    X = train.drop(["change"],axis=1)
+    y = train["change"]
+    rf = RandomForestRegressor(n_estimators=100)
+    rf.fit(X,y)
+    print(type(rf), rf.score(X,y)) # gives r2
+    test_profit["rfreg"] = rf.predict(test)
+
+
+
+    ## Classifiers ##
+
+    train = pre_df[:int(len(pre_df)*2/3)].drop(["change"], axis=1)
+    test = pre_df[-int(len(pre_df)*1/3):].drop(["change_int", "change"], axis=1)
+    X = train.drop(["change_int"], axis=1)
+    y = train["change_int"]  # NEED TO USE INTS FOR THE NEURAL NETWORK STUFF
 
     clfs = [
         MLPClassifier(alpha=1),
@@ -168,23 +212,43 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
         KNeighborsClassifier(n_neighbors=3)]
         #QuadraticDiscriminantAnalysis()]
 
+    clf_arr = ['mlp', 'dtree', 'kneighbors']
+    index = 0
     for clf in clfs:
         clf.fit(X,y)
-        #if cross_val_score(clf, X, y, scoring='accuracy').mean() == 1:
-        #print(clf.predict(test))
         print(type(clf), cross_val_score(clf, X, y, scoring='accuracy').mean()) #THIS ONLYWORKS FOR CLASSIFIERS
         predicted_movement = clf.predict(test)
-        #print(predicted_movement)
-        test_profit["change_predicted"] = predicted_movement
-        test_profit = test_profit.reset_index(drop=True)
-        # test_profit["change"] = 0
-        # test_profit["change_int"] = 0
-        # print(list(test_profit.columns.values))
-        # transformed = pd.DataFrame(scaler.inverse_transform(test_profit))
-        # transformed.columns = pre_df.columns
-        # transformed.to_csv('test.csv')
-        # profit(transformed, stock_name, type(clf))
-        profit(test_profit, stock_name, type(clf))
+
+        test_profit[clf_arr[index]] = predicted_movement
+        index += 1
+
+    test_profit = test_profit.reset_index(drop=True)
+
+    # conservative strategy - sell if any of models predicts a downtrend
+    if np.count_nonzero(test_profit['mlp'].values == -1) == len(test_profit):  # sometimes mlp only predicts sell signals
+        for i, row in test_profit.iterrows():
+            if test_profit['rfreg'][i] < 0 or test_profit['dtree'][i] < 0 or test_profit['kneighbors'][i] < 0:
+                test_profit["change_predicted"][i] = -1
+            else:
+                test_profit["change_predicted"][i] = 1
+    else:
+        for i, row in test_profit.iterrows():
+            if test_profit['rfreg'][i] < 0 or test_profit['mlp'][i] < 0 or test_profit['dtree'][i] < 0 or test_profit['kneighbors'][i] < 0:
+                test_profit["change_predicted"][i] = -1
+            else:
+                test_profit["change_predicted"][i] = 1
+
+    profit(test_profit, stock_name, "<BOOSTING - Strategy conservative>")
+
+    # leniant model - buy if more than half buy signals
+    for i, row in test_profit.iterrows():
+        if np.sign(test_profit['rfreg'][i]) + test_profit['mlp'][i] + test_profit['dtree'][i] + test_profit['kneighbors'][i] >= 2:
+            test_profit["change_predicted"][i] = 1
+        else:
+            test_profit["change_predicted"][i] = -1
+
+    profit(test_profit, stock_name, "<BOOSTING - Strategy leniant>")
+
 
 def deep_learning_sentiment(df, stock_name):
     # Multiple input series LSTM
@@ -192,10 +256,8 @@ def deep_learning_sentiment(df, stock_name):
         if len(str(df["twitter"][row.Index])) > 3:
             break
     first_tweet = row.Index 
-    #pre_df = df[first_tweet:].drop(["Date", "twitter", "Ex-Dividend", "Split Ratio"], axis=1) # get rid of strings
-    #pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
-    #pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites"]]
-    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment"]]  # Close must be first in df!
+    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites"]]
+    #pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment"]]  # Close must be first in df!
     dataset = pre_df.values
 
     scaler = MinMaxScaler()
@@ -204,7 +266,7 @@ def deep_learning_sentiment(df, stock_name):
     data_train = dataset[0:int(len(dataset)*2/3), :]
     data_test = dataset[int(len(dataset)*2/3):len(dataset), :]
 
-    look_back = 3
+    look_back = 60
 
     x_train, y_train = [], []
     for i in range(look_back, len(data_train)):
@@ -223,35 +285,32 @@ def deep_learning_sentiment(df, stock_name):
     model.add(LSTM(units=50))
     model.add(Dense(1))
     model.compile(loss='mean_squared_error', optimizer='adam')
-    model.fit(x_train, y_train, epochs=1, batch_size=1, verbose=2)
+    model.fit(x_train, y_train, epochs=100, batch_size=32, verbose=2)
     predict = model.predict(x_test, verbose=0)
+    predicted = predict
 
-    predicted = np.append(predict, np.ones([len(predict),1]),1)
+    for i in range(len(pre_df.columns.values.tolist())-1):
+        predicted = np.append(predicted, np.ones([len(predict), 1]), 1)
 
     predicted = scaler.inverse_transform(predicted)
-
-    #print(predicted)
 
     test_df = pre_df[int(len(dataset)*2/3) + look_back:]
 
     testScore = math.sqrt(mean_squared_error(test_df["Close"], predicted[:, 0]))
     print('Test Score of %s: %.2f RMSE' % (stock_name, testScore))
 
-    print(test_df.columns)
-
     test_df["predicted"] = predicted[:, 0]
     test_df = test_df.reset_index(drop=True)
 
-    for i, row in test_df.iterrows(): # THIS ISNT ACTUALLY WORKING!!!!
+    # strategy - if predicted price is less than current close, then sell, if above current close then buy
+    for i, row in test_df.iterrows():
         if test_df["Close"].iloc[i] < test_df["predicted"].iloc[i]:
             change_predicted = 1
         else:
             change_predicted = -1
         test_df.loc[i, "change_predicted"] = change_predicted
 
-    # MAYBE LOOK TO FIX THE NP.RANDOMSEED
-
-    profit(test_df, stock_name, type(model))
+    return profit(test_df, stock_name, type(model))
 
 
 def average_sentiment_other_values(df):
@@ -303,6 +362,8 @@ def profit(df, name, clf_type):
 
     baseline_shares = int(bank / df["Close"].iloc[0])
     baseline_value = bank - df["Close"].iloc[0]*baseline_shares
+
+    #print(baseline_shares, baseline_value, baseline_shares * df["Close"].iloc[len(df) - 1])
 
     for i, row in df.iterrows():
         if df["change_predicted"][i] > 0:

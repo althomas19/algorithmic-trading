@@ -1,0 +1,158 @@
+\documentclass[../thesis.tex]{subfiles}
+\begin{document}
+\chapter{Appendix}
+\label{ch:append}
+
+\subsection{Implementation}
+
+Included in this section is all of the pseudocode for the implementations described above.
+
+\subsubsection{SMA}
+
+\begin{verbatim}
+def execute(stock, start_date, end_date):
+    stock = stockDataRetriever(stock, start_date, end_date).getStock()
+
+    # Initialize the short and long windows and buy sell in df
+    short_window = 40
+    long_window = 100
+    
+    # set Pandas df with stock data
+    df = pd.DataFrame(index=stock.index)
+
+    # Create short and long simple moving average 
+    df['short_moving_average'] = df.movingWindow(short_window)
+    df['long_moving_average'] = df.movingWindow(long_window)
+    
+    # mark signal based on comparison of the two averages
+    df['signal'] = df.compare(short_moving_average, long_moving_average,1,0)
+    
+    # when signal changes from 1 to 0 or 0 to 1 - is a buy or sell
+    df['positions'] = df['signal'].diff()
+
+\end{verbatim}
+
+\subsubsection{EMA }
+
+\begin{verbatim}
+def execute(stock, start_date, end_date):
+    stock = stockDataRetriever(stock, start_date, end_date).getStock()
+
+    # Initialize the short and long windows and buy sell in df
+    short_window = 12
+    long_window = 26
+
+    # set Pandas df with stock data
+    df = pd.DataFrame(index=stock.index)
+
+    # Create short and long simple moving average
+    df[short_exponential_moving_average] = df.ema(short_window)
+    df[long_exponential_moving_average] = df.ema(long_window)
+
+    # mark signal based on comparison of the two averages
+    df[signal] = df.compare(short_exponential_moving_average, long_exponential_moving_average,1,0)
+
+    # when signal changes from 1 to 0 or 0 to 1 - is a buy or sell
+    df[positions] = df[signal].diff()
+
+\end{verbatim}
+
+\subsubsection{Bollinger Bands }
+
+\begin{verbatim}
+def execute(stock, start_date, end_date):
+    stock = stockDataRetriever(stock, start_date, end_date).getStock()
+
+    # Initialize the window
+    window = 12
+
+    # set Pandas df with stock data
+    df = pd.DataFrame(index=stock.index)
+
+    # Create the bollinger bands
+    df['middle_band] = df.sma(window)
+    df['moving_deviation'] = df.std(window)
+    df['upper_band'] = df['middle_band'] + df['moving_deviation'] * 2
+    df['lower_band'] = df['middle_band'] - df['moving_deviation'] * 2
+
+    # mark signal based on when price moves above or below lower or upper bands
+    df[signal] = df.compare((df_closing_price, df_lower band), 
+    		     (df_closing_price, df_upper_band),1,0)
+
+    # when signal changes from 1 to 0 or 0 to 1 - is a buy or sell
+    df[positions] = df[signal].diff()
+
+\end{verbatim}
+
+\subsubsection{RSI }
+
+\begin{verbatim}
+def execute(stock1, stock2, start_date, end_date):
+    stock = stockDataRetriever(stock1, start_date, end_date).getStock()
+
+    # set Pandas df with both stocks
+    df = pd.DataFrame(index=stock.index)
+
+    # create measures of up and down performance
+    delta = stock['Close'].diff()
+    roll_up = delta[delta > 0].rolling.mean()
+    roll_down = delta[delta > 0].rolling.mean()
+    
+    # create RSI
+    RS = roll_up/roll_down
+    RSI = 100.0 - (100.0 / (1.0 + RS))
+
+    # create the buy and sell commands
+    df['buy'] = np.where(RSI < 30, 1, 0)
+    df['sell'] = np.where(RSI > 70, -1, 0)
+    df['signal'] = df['buy'] + df['sell']
+
+    # when signal changes from 1 to 0 or 0 to 1 - is a buy or sell
+    df[positions] = df[signal].diff()
+
+\end{verbatim}
+
+\subsubsection{Combination Momentum Strategies }
+
+\begin{verbatim}
+def execute(stock, start_date, end_date):
+    stock = stockDataRetrieverIntraday(stock, start_date, end_date).getStock()
+	
+    # create df for both RSI and MACD and merge
+    rsi_df = RSI(name, stock)
+    macd_df = MACD(name, stock)
+    df = pd.merge(rsi_df, macd_df)
+    
+    # buy signals when both rsi and macd indicate buy
+    # sell signals when either one of rsi or macd indicate sell
+    df['buy'] = (df['signal_rsi'] == 1) & (df['signal_macd'] == 1)
+    df['sell'] = (df['signal_rsi'] == -1) | (df['signal_macd'] == -1)
+    df['signal] = df['buy'] + df['sell']
+
+\end{verbatim}
+
+\subsubsection{Pairs Trading}
+
+\begin{verbatim}
+def execute(stock1, stock2, start_date, end_date):
+    stock_1 = stockDataRetriever(stock1, start_date, end_date).getStock()
+    stock_2 = stockDataRetriever(stock2, start_date, end_date).getStock()
+
+    # set Pandas df with both stocks
+    df = pd.DataFrame(index=stock_1.index, stock_2.index)
+
+    # create zscore from price ratios
+    ratios = df['Close_stock1']/df['Close_stock2']
+    zscore = (ratios - ratios.mean())/ np.std(ratios)
+
+    # Create the buy and sell commands
+    df['buy'] = np.where(zscore < -1, 1, 0)
+    df['sell'] = np.where(zscore > 1, -1, 0)
+    df['signal'] = df['buy'] + df['sell']
+
+    # when signal changes from 1 to 0 or 0 to 1 - is a buy or sell
+    df[positions] = df[signal].diff()
+
+\end{verbatim}
+
+\end{document}

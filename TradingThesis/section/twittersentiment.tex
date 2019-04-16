@@ -1,0 +1,36 @@
+\documentclass[../thesis.tex]{subfiles}
+\begin{document}
+\chapter{Twitter Sentiment and Stock Trading}
+\label{ch:pruning}
+
+We create unique twitter sentiment stock trading algorithms using a variety of different models. 
+
+\section{Twitter Sentiment}
+
+As mentioned in the literature review, sentiment can be used to effectively trade in the stock market. While a variety of different papers have looked at more general tweet sentiment directed at particular stocks, such as specific stock ticker mentions \cite{Mao2013}, we choose a different method. Unlike previous literature, we instead leverage large companies own twitter activity. The motivation is that companies often use social media as a primary medium for announcements, product launches, and generally important events. While mentions of a particular stock can gage the public's reaction or sentiment to a particular event, we attempt to circumvent this reactionary sentiment measure and look at the sentiment of the content the company is producing on Twitter. By analyzing a companies Twitter output for a day, we expect that we can use that information to more effectively predict the following days stock price movement and thus generate more profit. This method has the added benefit of not only gaging the sentiment of a companies tweets, but also identifying the public's reaction to particular tweets measured by retweets and favorites. 
+
+We obtain twitter sentiment data as described in the preliminaries. We then aggregate the Twitter data over each day of stock trading by merging both the Twitter data and stock data Pandas DataFrames. Replies, which are tweets directed in response to particular users, are dropped from the models, as this would skew the intent of the data as we are concerned with tweets directed at the general public. We create inputs for our model over each day of average tweet sentiment, amount of tweets, total favorites, and total retweets. After, we then generate indicators for supervised learning: closing price change and closing price signed change. For the regression model we use the float value of change in closing price while the classifier models only accept integer values for the y-value input. Therefore, a $1$ signals a positive change in price while a $-1$ signals a negative change in price from day to day.  
+
+\added[id=AT, remark = {move discussion of ML algos here - add graph, add code sample???}] {what do i do}
+
+\section{Different Models}
+
+Each model, besides Deep Learning, run on the 4 different machine learning techniques described in the preliminaries: Random Forest Regressor, MLP classifier, decision tree classifier, and $k$-nearest neighbors classifier. We use a variety of different models to try to better understand the efficacy of particular machine learning techniques, or if a particular model is more effective than the others. For each model, all of the data is scaled using Sklearn's minmaxscaler() preprocessing tool to remove skew from the data. Most companies tweets aren't overwhelmingly negative and are far more positive.
+
+\subsection{Simplistic Model}
+
+The most simplistic model employed in our research only uses two inputs to the model: closing price and average tweet sentiment.
+
+\subsection{Complex Model}
+
+Building on the simplistic model, the complex model adds in twitter features to the input. We use amount of tweets, favorites, and retweets to provide a more detailed input to the model, which should translate to more accurate results. 
+
+\subsection{Boosted Model}
+
+Using the input to our complex model, we use boosting to find more consistent performance with the particular machine learning algorithms. Boosting works by aggregating the buy or sell signal from each machine learning technique on each day of stock trading. We employ two different strategies in this model -- one that behaves more conservatively and another that behaves generates buy signals far more leniently. The former sells all positions if any machine learning model generates a sell signal and only buys when all 4 models generate a buy signal. The latter gives a buy signal if more than half of the models generate a buy signal and sells if under half give buy signals.
+
+\subsection{Deep Learning Model}
+
+Our Deep Learning model uses the same inputs found in our complex model. As described in the preliminaries, we employ an LSTM neural network to predict stock price for the following day. 
+
+\end{document}

@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: thesis.aux
+The style file: abbrv.bst
+Database file #1: library.bib
+Warning--empty institution in Abadi
+Warning--empty year in Abadi
+Warning--empty journal in AlmeidaTeixeira
+Warning--empty year in AlmeidaTeixeira
+Warning--there's a number but no volume in Bendtsen2016
+Warning--empty institution in Bollen
+Warning--empty year in Bollen
+Warning--empty institution in Chaboud2009
+Warning--empty institution in Ehlers
+Warning--empty year in Ehlers
+Warning--empty institution in Fu2009
+Warning--empty journal in Garcia2015
+Warning--empty institution in Gomber2011
+Warning--empty journal in Ho2016
+Warning--empty institution in Loria2018
+Warning--empty journal in Mao2013
+Warning--there's a number but no volume in Mao2013
+Warning--empty institution in Pang
+Warning--empty year in Pang
+Warning--empty institution in PedregosaFABIANPEDREGOSA2011
+Warning--empty journal in Treleaven2013
+You've used 29 entries,
+            2118 wiz_defined-function locations,
+            659 strings with 8992 characters,
+and the built_in function-call counts, 9762 in all, are:
+= -- 858
+> -- 748
+< -- 0
++ -- 297
+- -- 268
+* -- 776
+:= -- 1785
+add.period$ -- 81
+call.type$ -- 29
+change.case$ -- 230
+chr.to.int$ -- 0
+cite$ -- 50
+duplicate$ -- 266
+empty$ -- 564
+format.name$ -- 268
+if$ -- 1851
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 16
+newline$ -- 142
+num.names$ -- 58
+pop$ -- 251
+preamble$ -- 1
+purify$ -- 192
+quote$ -- 0
+skip$ -- 187
+stack$ -- 0
+substring$ -- 281
+swap$ -- 15
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 114
+warning$ -- 21
+while$ -- 72
+width$ -- 31
+write$ -- 281
+(There were 21 warnings)

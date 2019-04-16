@@ -1,0 +1,51 @@
+
+\newif\ifPrint
+%\Printfalse    %Uncomment and comment next line for digital-only version
+\Printtrue     %Uncomment and comment previous line for print version
+
+\ifPrint
+\documentclass[letterpaper,12pt,BCOR10mm,headsepline,open=right]{scrbook}
+\else
+\documentclass[letterpaper,12pt,headsepline,twoside=no]{scrbook}
+\fi{}
+
+\usepackage{thesis}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{algorithm}
+\usepackage{algpseudocode}	
+\usepackage{numprint}
+\npdecimalsign{.}
+\usepackage[square,comma,numbers,sort]{natbib}
+
+\newcommand{\theauthor}{Alex Thomas}
+
+\begin{document}
+\linenumbers
+
+\definechangesauthor[name={Alex Thomas}, color=blue]{AT}
+
+\renewcommand{\thepage}{\roman{page}}
+\subfile{./section/title}
+\subfile{./section/abstract}
+\subfile{./section/acknowledgments}
+\subfile{./section/signature}
+
+\tableofcontents
+\mainmatter
+\pagestyle{headings}
+
+
+\listofchanges
+
+\renewcommand{\thepage}{\arabic{page}}
+\subfile{./section/introduction}
+\subfile{./section/relatedwork}
+\subfile{./section/preliminaries}
+\subfile{./section/examiningalgos}
+\subfile{./section/twittersentiment}
+\subfile{./section/experiments}
+\subfile{./section/conclusion}
+\subfile{./section/appendix}
+\bibliography{library}
+\end{document}
