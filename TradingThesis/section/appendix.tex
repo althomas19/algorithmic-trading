@@ -3,11 +3,11 @@
 \chapter{Appendix}
 \label{ch:append}
 
-\subsection{Implementation}
+\section{Implementation}
 
 Included in this section is all of the pseudocode for the implementations described above.
 
-\subsubsection{SMA}
+\subsection{SMA}
 
 \begin{verbatim}
 def execute(stock, start_date, end_date):
@@ -32,7 +32,7 @@ def execute(stock, start_date, end_date):
 
 \end{verbatim}
 
-\subsubsection{EMA }
+\subsection{EMA }
 
 \begin{verbatim}
 def execute(stock, start_date, end_date):
@@ -46,18 +46,18 @@ def execute(stock, start_date, end_date):
     df = pd.DataFrame(index=stock.index)
 
     # Create short and long simple moving average
-    df[short_exponential_moving_average] = df.ema(short_window)
-    df[long_exponential_moving_average] = df.ema(long_window)
+    df[short_ema] = df.ema(short_window)
+    df[long_ema] = df.ema(long_window)
 
     # mark signal based on comparison of the two averages
-    df[signal] = df.compare(short_exponential_moving_average, long_exponential_moving_average,1,0)
+    df[signal] = df.compare(short_ema, long_ema,1,0)
 
     # when signal changes from 1 to 0 or 0 to 1 - is a buy or sell
     df[positions] = df[signal].diff()
 
 \end{verbatim}
 
-\subsubsection{Bollinger Bands }
+\subsection{Bollinger Bands }
 
 \begin{verbatim}
 def execute(stock, start_date, end_date):
@@ -75,7 +75,7 @@ def execute(stock, start_date, end_date):
     df['upper_band'] = df['middle_band'] + df['moving_deviation'] * 2
     df['lower_band'] = df['middle_band'] - df['moving_deviation'] * 2
 
-    # mark signal based on when price moves above or below lower or upper bands
+    # mark signal based on upper or lower prices
     df[signal] = df.compare((df_closing_price, df_lower band), 
     		     (df_closing_price, df_upper_band),1,0)
 
@@ -84,7 +84,7 @@ def execute(stock, start_date, end_date):
 
 \end{verbatim}
 
-\subsubsection{RSI }
+\subsection{RSI }
 
 \begin{verbatim}
 def execute(stock1, stock2, start_date, end_date):
@@ -112,7 +112,7 @@ def execute(stock1, stock2, start_date, end_date):
 
 \end{verbatim}
 
-\subsubsection{Combination Momentum Strategies }
+\subsection{Combination Momentum Strategies }
 
 \begin{verbatim}
 def execute(stock, start_date, end_date):
@@ -131,7 +131,7 @@ def execute(stock, start_date, end_date):
 
 \end{verbatim}
 
-\subsubsection{Pairs Trading}
+\subsection{Pairs Trading}
 
 \begin{verbatim}
 def execute(stock1, stock2, start_date, end_date):

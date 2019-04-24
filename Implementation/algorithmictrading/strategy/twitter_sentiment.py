@@ -34,6 +34,8 @@ def execute(stock_name, start_date, end_date, fetchStocks):
         df = tweetDataRetriever(stock_name).fetch_merged_tweet()
 
     # create buy/sell signals using different techniques
+    #correlation(df, stock_name)
+    #naive_sentiment(df, stock_name)
     machine_learning_sentiment(df, stock_name)
     #machine_learning_sentiment_boosted(df, stock_name)
     #deep_learning_sentiment(df, stock_name)
@@ -92,6 +94,43 @@ def build_df(stock_name, start_date, end_date):
     df.to_csv("./twitterCSV/" + stock_name[5:] + "_MERGED.csv")
     return df
 
+def correlation(df, stock_name):
+    for row in df.itertuples():
+        if len(str(df["twitter"][row.Index])) > 3:
+            break
+    first_tweet = row.Index 
+    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
+
+    scaler = MinMaxScaler()
+    pre_df["avg_sentiment"] = scaler.fit_transform(pre_df["avg_sentiment"].reshape(-1, 1))
+    pre_df["total_tweets"] = scaler.fit_transform(pre_df["total_tweets"].reshape(-1, 1))
+    pre_df["total_retweets"] = scaler.fit_transform(pre_df["total_retweets"].reshape(-1, 1))
+    pre_df["total_favorites"] = scaler.fit_transform(pre_df["total_favorites"].reshape(-1, 1))
+    print("testing correlation of", stock_name)
+    print("sentiment", np.corrcoef(pre_df["avg_sentiment"],pre_df["Close"])[0][1])
+    print("favorites", np.corrcoef(pre_df["total_favorites"],pre_df["Close"])[0][1])
+    print("retweets", np.corrcoef(pre_df["total_retweets"],pre_df["Close"])[0][1])
+    print("total_tweets",np.corrcoef(pre_df["total_tweets"],pre_df["Close"])[0][1])
+    print("")
+
+def naive_sentiment(df, stock_name):
+    # find first tweet date
+    for row in df.itertuples():
+        if len(str(df["twitter"][row.Index])) > 3:
+            break
+    first_tweet = row.Index# use test size for comparable results
+    pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
+    pre_df = pre_df.reset_index(drop=True)
+
+    pre_df['change_predicted'] = 0
+    for i, row in pre_df.iterrows():
+        if pre_df["avg_sentiment"][i] > .25:
+            pre_df["change_predicted"][i] = 1
+        elif pre_df["avg_sentiment"][i] < 0:
+            pre_df["change_predicted"][i] = -1
+
+    profit(pre_df, stock_name, "naive strategy")
+
 
 def machine_learning_sentiment(df, stock_name):  # model may see the trend for us!
     # SUPRESSES WARNINGS
@@ -112,15 +151,9 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
     pre_df["total_tweets"] = scaler.fit_transform(pre_df["total_tweets"].reshape(-1, 1))
     pre_df["total_retweets"] = scaler.fit_transform(pre_df["total_retweets"].reshape(-1, 1))
     pre_df["total_favorites"] = scaler.fit_transform(pre_df["total_favorites"].reshape(-1, 1))
-    # print(np.corrcoef(pre_df["avg_sentiment"],pre_df["Close"]))
-    # print(np.corrcoef(pre_df["total_favorites"],pre_df["Close"]))
-    # print(np.corrcoef(pre_df["total_retweets"],pre_df["Close"]))
-    # print(np.corrcoef(pre_df["total_tweets"],pre_df["Close"]))
     print("testing effectiveness of", stock_name)
 
-
     ## Regressor ##
-
 
     train = pre_df[:int(len(pre_df)*2/3)].drop(["change_int"], axis=1)
     test = pre_df[-int(len(pre_df)*1/3):].drop(["change", "change_int"], axis=1)
@@ -145,7 +178,7 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
     clfs = [
         MLPClassifier(hidden_layer_sizes=(100, 100, 100), max_iter=500, alpha=0.0001, solver='sgd', verbose=10),
         DecisionTreeClassifier(),
-        KNeighborsClassifier(n_neighbors=3)]
+        KNeighborsClassifier(n_neighbors=5)]
 
     for clf in clfs:
         clf.fit(X,y)
