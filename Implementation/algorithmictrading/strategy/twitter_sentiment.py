@@ -34,9 +34,9 @@ def execute(stock_name, start_date, end_date, fetchStocks):
         df = tweetDataRetriever(stock_name).fetch_merged_tweet()
 
     # create buy/sell signals using different techniques
-    #correlation(df, stock_name)
-    #naive_sentiment(df, stock_name)
-    machine_learning_sentiment(df, stock_name)
+    correlation(df, stock_name)
+    naive_sentiment(df, stock_name)
+    #machine_learning_sentiment(df, stock_name)
     #machine_learning_sentiment_boosted(df, stock_name)
     #deep_learning_sentiment(df, stock_name)
 
@@ -144,6 +144,7 @@ def machine_learning_sentiment(df, stock_name):  # model may see the trend for u
             break
     first_tweet = row.Index 
     pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "total_tweets", "total_retweets", "total_favorites", "change", "change_int"]]
+    #pre_df = df.loc[first_tweet:, ["Close", "avg_sentiment", "change", "change_int"]]
     pre_df["change_predicted"] = 0
 
     scaler = MinMaxScaler()
@@ -240,10 +241,9 @@ def machine_learning_sentiment_boosted(df, stock_name):  # model may see the tre
     y = train["change_int"]  # NEED TO USE INTS FOR THE NEURAL NETWORK STUFF
 
     clfs = [
-        MLPClassifier(alpha=1),
-        DecisionTreeClassifier(),  # BY FAR THE BEST!
-        KNeighborsClassifier(n_neighbors=3)]
-        #QuadraticDiscriminantAnalysis()]
+        MLPClassifier(hidden_layer_sizes=(100, 100, 100), max_iter=500, alpha=0.0001, solver='sgd', verbose=10),
+        DecisionTreeClassifier(),
+        KNeighborsClassifier(n_neighbors=5)]
 
     clf_arr = ['mlp', 'dtree', 'kneighbors']
     index = 0

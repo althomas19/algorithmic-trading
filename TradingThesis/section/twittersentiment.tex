@@ -14,11 +14,23 @@ To acquire Twitter sentiment values, we use Natural Language Processing (NLP). N
 We then aggregate the Twitter data over each day of stock trading by merging both the Twitter data and stock data Pandas DataFrames. Replies, which are tweets directed in response to particular users, are dropped from the models, as this would skew the intent of the data as we are concerned with tweets directed at the general public.We create inputs for our model over each day of average tweet sentiment, amount of tweets, total favorites, and total retweets. After, we then generate indicators for supervised learning: closing price change and closing price signed change. For the regression model we use the float value of change in closing price while the classifier models only accept integer values for the y-value input. Therefore, a $1$ signals a positive change in price while a $-1$ signals a negative change in price from day to day.  
 
 \section{Statistical Approach}
-We look to understand if there is any statistical correlation between closing price and average tweet sentiment. We find that there is very minimal correlation. Figure INSERT shows this lack of correlation. We find BIG to have the most correlation of any stock tested of a measly 0.30. The vast majority of the stocks are under +/- 0.15 correlation. This lack of correlation could have negative implications for a very basic trading strategy that uses sentiment values statistically.
+We look to understand if there is any statistical correlation between closing price and average tweet sentiment. We find that there is very minimal correlation. Figure~\ref{Corrfigure} shows this lack of correlation. We find BIG to have the most correlation of any stock tested of a measly 0.30. The vast majority of the stocks are under +/- 0.15 correlation. This lack of correlation could have negative implications for a very basic trading strategy that uses sentiment values statistically.
 
-Because there is little correlation between closing price and average sentiment we should expect a na\"{i}ve strategy to perform poorly. We create a simple strategy that generates a buy signal when the average tweet sentiment is above .25 and generates a sell signal when it is below 0. We choose these values because of what we find in the data. Companies often have tweets that are positive, which is logical. Twitter is used as a means of promotion and sharing of news that is often positive so if the companies tweets for the day were on average negatively, we could expect the stock to perform poorly the next day. Figure INSERT shows the abysmal performance for this na\"{i}ve strategy. Only 25\% of the stocks end up beating the baseline, with the underperforming stocks performing terribly. HAS characterizes the overall performance of this strategy well -- with the strategy losing 16.4\% while the baseline nets a 280.1\% profit. If sentiment was more correlated with closing price, we would expect this strategy to be more profitable. This lack of correlation motivates the need for a more sophisticated approach, such as using machine learning. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=120mm]{CorrelationResults.png}
+\caption{Correlation Results \label{overflow}}
+\label{Corrfigure}
+\end{figure}
 
-\added[id=AT, remark = {add graph of results, strategy results}] {put in graphs!}
+Because there is little correlation between closing price and average sentiment we should expect a na\"{i}ve strategy to perform poorly. We create a simple strategy that generates a buy signal when the average tweet sentiment is above .25 and generates a sell signal when it is below 0. We choose these values because of what we find in the data. Companies often have tweets that are positive, which is logical. Twitter is used as a means of promotion and sharing of news that is often positive so if the companies tweets for the day were on average negatively, we could expect the stock to perform poorly the next day. Figure~\ref{Naivefigure} shows the abysmal performance for this na\"{i}ve strategy. Only 25\% of the stocks end up beating the baseline, with the underperforming stocks performing terribly. EBAY characterizes the overall performance of this strategy well -- with the strategy returning 47.2\% while the baseline nets a 237.6\% profit. If sentiment was more correlated with closing price, we would expect this strategy to be more profitable. This lack of correlation motivates the need for a more sophisticated approach, such as using machine learning. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=120mm]{NaiveResults.png}
+\caption{Naive Strategy Results \label{overflow}}
+\label{Naivefigure}
+\end{figure}
 
 
 \section{Stock Trading and Machine Learning Algorithms}

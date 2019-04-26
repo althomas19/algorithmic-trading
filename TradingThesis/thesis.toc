@@ -28,20 +28,20 @@
 \contentsline {section}{\numberline {6.1}Twitter Data and Aggregation}{29}{section.6.1}
 \contentsline {section}{\numberline {6.2}Statistical Approach}{30}{section.6.2}
 \contentsline {section}{\numberline {6.3}Stock Trading and Machine Learning Algorithms}{31}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Trees}{31}{subsection.6.3.1}
-\contentsline {subsubsection}{\nonumberline Decision Tree Classifier}{31}{section*.15}
-\contentsline {subsubsection}{\nonumberline RandomForest Regressor}{32}{section*.17}
-\contentsline {subsection}{\numberline {6.3.2}Other Classifiers}{32}{subsection.6.3.2}
-\contentsline {subsubsection}{\nonumberline $K$-nearest Neighbors Classifier}{32}{section*.18}
-\contentsline {subsubsection}{\nonumberline MLP Classifier}{33}{section*.19}
+\contentsline {subsection}{\numberline {6.3.1}Trees}{32}{subsection.6.3.1}
+\contentsline {subsubsection}{\nonumberline Decision Tree Classifier}{32}{section*.17}
+\contentsline {subsubsection}{\nonumberline RandomForest Regressor}{32}{section*.19}
+\contentsline {subsection}{\numberline {6.3.2}Other Classifiers}{33}{subsection.6.3.2}
+\contentsline {subsubsection}{\nonumberline $K$-nearest Neighbors Classifier}{33}{section*.20}
+\contentsline {subsubsection}{\nonumberline MLP Classifier}{34}{section*.21}
 \contentsline {subsection}{\numberline {6.3.3}Deep Learning}{34}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Models with Different Features applying Machine Learning Algorithms}{34}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Simplistic Features}{35}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Complex Features}{35}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Stacked Features}{35}{subsection.6.4.3}
-\contentsline {subsection}{\numberline {6.4.4}Deep Learning}{35}{subsection.6.4.4}
+\contentsline {section}{\numberline {6.4}Models with Different Features applying Machine Learning Algorithms}{35}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Simplistic Features}{36}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Complex Features}{36}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Stacked Features}{36}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Deep Learning}{36}{subsection.6.4.4}
 \contentsline {chapter}{\numberline {7}Twitter Sentiment Results}{37}{chapter.7}
-\contentsline {section}{\numberline {7.1}Basic Model}{37}{section.7.1}
+\contentsline {section}{\numberline {7.1}Simplistic Model}{38}{section.7.1}
 \contentsline {section}{\numberline {7.2}Extended Model}{38}{section.7.2}
 \contentsline {section}{\numberline {7.3}Stacking Model}{39}{section.7.3}
 \contentsline {section}{\numberline {7.4}Deep Learning Model}{40}{section.7.4}
