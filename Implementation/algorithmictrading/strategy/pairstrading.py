@@ -33,10 +33,11 @@ def execute(stock_name1, stock_name2, start_date, end_date, fetchStocks):
 
     plot_signals(df, stock_name1, stock_name2)
 
-    for denom in [10,100,1000]:
+    #for denom in [10,100,1000]:
+    for denom in [100]:
         percent_profit = generate_profit(df,denom)
         print(percent_profit)
-    print(benchmark().get_SPY_benchmark())
+    #print(benchmark().get_SPY_benchmark())
 
     return percent_profit, plt
 
@@ -72,6 +73,11 @@ def generate_profit(df, denom):
 
     overall_return = money + S1_shares * df['Close_x'][i] + S2_shares*df['Close_y'][i]
     print("overall return:",denom,overall_return)
+
+    buy_x = (start_amount - df['Close_x'][0] * denom) + df['Close_x'][len(df)-1] * denom
+    buy_y = (start_amount - df['Close_y'][0] * denom) + df['Close_y'][len(df)-1] * denom
+    print(buy_x, buy_y)
+    print("baseline", ((buy_x + buy_y - 2*start_amount))/1000)
     return (overall_return - start_amount)/ start_amount * 100
 
 

@@ -61,7 +61,7 @@ def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
              'v', markersize=10, color='k')
 
     #share_amount = 100
-    initial_capital = float(100000.0)
+    initial_capital = float(10000.0)
 
     positions = pd.DataFrame(index=df.index).fillna(0.0)
     positions[stock_name] = share_amount*df['signal']

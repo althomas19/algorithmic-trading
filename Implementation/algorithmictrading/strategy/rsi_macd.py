@@ -28,14 +28,15 @@ def execute():
         df['positions'] += sell
 
         # plot trading signals
-        ax1 = plt.figure().add_subplot(111,  ylabel='Price in $')
-        df['Close'].plot(ax=ax1, color='b', lw=2.)
-        ax1.set_title(name + ": RSI_MACD")
-        plt.xlabel("Time (Minutes)")
-        ax1.plot(df.loc[df.positions == 1].index, df.Close[df.positions == 1], '^', markersize=10, color='g')
-        ax1.plot(df.loc[df.positions == -1].index, df.Close[df.positions == -1], 'v', markersize=10, color='r')
-
-        for denom in [10,100,1000]:
+        # ax1 = plt.figure().add_subplot(111,  ylabel='Price in $')
+        # df['Close'].plot(ax=ax1, color='r', lw=2.)
+        # ax1.set_title(name + ": RSI_MACD")
+        # plt.xlabel("Time (Minutes)")
+        # ax1.plot(df.loc[df.positions == 1].index, df.Close[df.positions == 1], '^', markersize=10, color='g')
+        # ax1.plot(df.loc[df.positions == -1].index, df.Close[df.positions == -1], 'v', markersize=10, color='r')
+        #plt.show()
+        # for denom in [10,100,1000]:
+        for denom in [100]:
             profit(df, name, denom)
 
 
@@ -47,7 +48,7 @@ def scan_buy_signal(signal):
 
 
 def profit(df, name, denom):
-    base = 100000
+    base = 10000
     money = base
     shares = 0
 

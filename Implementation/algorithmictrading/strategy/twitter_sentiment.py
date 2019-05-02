@@ -34,10 +34,10 @@ def execute(stock_name, start_date, end_date, fetchStocks):
         df = tweetDataRetriever(stock_name).fetch_merged_tweet()
 
     # create buy/sell signals using different techniques
-    correlation(df, stock_name)
-    naive_sentiment(df, stock_name)
+    #correlation(df, stock_name)
+    #naive_sentiment(df, stock_name)
     #machine_learning_sentiment(df, stock_name)
-    #machine_learning_sentiment_boosted(df, stock_name)
+    machine_learning_sentiment_boosted(df, stock_name)
     #deep_learning_sentiment(df, stock_name)
 
 
