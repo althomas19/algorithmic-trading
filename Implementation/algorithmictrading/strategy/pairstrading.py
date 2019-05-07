@@ -101,17 +101,17 @@ def plot_signals(df, stock_name1, stock_name2):
     # Plot the buy and sell for both stocks
     ax1.plot(df.loc[df.signals == 1.0].index,
              df.Close_x[df.signals == 1.0],
-             '^', markersize=5, color='g')
+             '^', markersize=5, color='m')
     ax1.plot(df.loc[df.signals == 1.0].index,
              df.Close_y[df.signals == 1.0],
-             'v', markersize=5, color='r')
+             'v', markersize=5, color='k')
 
     ax1.plot(df.loc[df.signals == -1.0].index,
              df.Close_y[df.signals == -1.0],
-             '^', markersize=5, color='g')
+             '^', markersize=5, color='m')
     ax1.plot(df.loc[df.signals == -1.0].index,
              df.Close_x[df.signals == -1.0],
-             'v', markersize=5, color='r')
+             'v', markersize=5, color='k')
 
 
 def cointegration(stock_name1, stock_name2, start_date, end_date, fetchStocks):

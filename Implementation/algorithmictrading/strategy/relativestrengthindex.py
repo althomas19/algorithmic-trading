@@ -31,7 +31,8 @@ def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
     # plot RSI
     fig = plt.figure()
     fig.suptitle(stock_name + ": RSI")
-    RSI.plot()
+    plt.xlabel("Time (Days)")
+    RSI[:601].plot()
 
     df['RSI'] = RSI.copy()
 
@@ -50,14 +51,17 @@ def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
 
     df['signal'] = createSignals(df['positions'].copy())
 
+    dfplot = df.copy(deep=True)
+    dfplot = dfplot.loc[:600]
     ax1 = plt.figure().add_subplot(111,  ylabel='Price in $')
-    df[['Close']].plot(ax=ax1, lw=2.)
+    dfplot[['Close']].plot(ax=ax1, color='r', lw=2.)
     ax1.set_title(stock_name[5:] + ": RSI")
-    ax1.plot(df.loc[df.positions == 1.0].index,
-             df.Close[df.positions == 1.0],
+    plt.xlabel("Time (Days)")
+    ax1.plot(dfplot.loc[dfplot.positions == 1.0].index,
+             dfplot.Close[dfplot.positions == 1.0],
              '^', markersize=10, color='m')
-    ax1.plot(df.loc[df.positions == -1.0].index,
-             df.Close[df.positions == -1.0],
+    ax1.plot(dfplot.loc[dfplot.positions == -1.0].index,
+             dfplot.Close[dfplot.positions == -1.0],
              'v', markersize=10, color='k')
 
     #share_amount = 100

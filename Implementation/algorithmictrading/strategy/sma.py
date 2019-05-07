@@ -56,17 +56,18 @@ def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
     fig.suptitle(stock_name + ": SMA")
     ax1 = fig.add_subplot(111,  ylabel='Price in $')
 
-    #stock['Close'].plot(ax=ax1, color='r', lw=2.)
-    #df[['short_mavg', 'long_mavg']].plot(ax=ax1, lw=2.)
-    df[['long_mavg']].plot(ax=ax1, color='orange',lw=2.)
+    dfplot = df.copy(deep=True)
+    dfplot = dfplot.loc[:600]
+    stock.loc[:600]['Close'].plot(ax=ax1, color='r', lw=2.)
+    dfplot[['short_mavg', 'long_mavg']].plot(ax=ax1, lw=2.)
     plt.xlabel("Time (Days)")
-    # Plot the buy and sell df
-    # ax1.plot(df.loc[df.positions == 1.0].index,
-    #          df.short_mavg[df.positions == 1.0],
-    #          '^', markersize=10, color='m')
-    # ax1.plot(df.loc[df.positions == -1.0].index,
-    #          df.short_mavg[df.positions == -1.0],
-    #          'v', markersize=10, color='k')
+    #Plot the buy and sell df
+    ax1.plot(dfplot.loc[dfplot.positions == 1.0].index,
+             dfplot.short_mavg[dfplot.positions == 1.0],
+             '^', markersize=10, color='m')
+    ax1.plot(dfplot.loc[dfplot.positions == -1.0].index,
+             dfplot.short_mavg[dfplot.positions == -1.0],
+             'v', markersize=10, color='k')
 
 
     return plt, percentage_difference_profit

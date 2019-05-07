@@ -8,8 +8,8 @@ from algorithmictrading.stockData.getStock import stockDataRetriever
 def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
     stock = stockDataRetriever(stock_name, start_date, end_date).fetchStock(fetchStocks)
 
-    short_window = 50
-    long_window = 200
+    short_window = 12
+    long_window = 26
     df = pd.DataFrame(index=stock.index)
     df['signal'] = 0.0
 
@@ -23,16 +23,19 @@ def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
     # when signal changes fromn 1 to 0 or 0 to 1 - is a buy or sell
     df['positions'] = df['signal'].diff()
 
+    dfplot = df.copy(deep=True)
+    dfplot = dfplot.loc[:600]
     ax1 = plt.figure().add_subplot(111,  ylabel='Price in $')
-    stock['Close'].plot(ax=ax1, color='r', lw=2.)
-    df[['short_ema', 'long_ema']].plot(ax=ax1, lw=2.)
+    stock.loc[:600]['Close'].plot(ax=ax1, color='r', lw=2.)
+    dfplot[['short_ema', 'long_ema']].plot(ax=ax1, lw=2.)
     ax1.set_title(stock_name[5:] + ": EMA")
+    plt.xlabel("Time (Days)")
     # Plot the buy and sell df
-    ax1.plot(df.loc[df.positions == 1.0].index,
-             df.short_ema[df.positions == 1.0],
+    ax1.plot(dfplot.loc[dfplot.positions == 1.0].index,
+             dfplot.short_ema[dfplot.positions == 1.0],
              '^', markersize=10, color='m')
-    ax1.plot(df.loc[df.positions == -1.0].index,
-             df.short_ema[df.positions == -1.0],
+    ax1.plot(dfplot.loc[dfplot.positions == -1.0].index,
+             dfplot.short_ema[dfplot.positions == -1.0],
              'v', markersize=10, color='k')
 
     #share_amount = 100

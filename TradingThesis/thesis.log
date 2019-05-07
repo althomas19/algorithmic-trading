@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  1 MAY 2019 21:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  7 MAY 2019 17:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1991,6 +1991,24 @@ LaTeX Warning: Label `overflow' multiply defined.
 LaTeX Warning: Label `overflow' multiply defined.
 
 
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `sub@overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `sub@overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
 LaTeX Warning: Label `sub@overflow' multiply defined.
 
 
@@ -2013,9 +2031,6 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 
 LaTeX Warning: Label `sub@overflow' multiply defined.
-
-
-LaTeX Warning: Label `overflow' multiply defined.
 
 
 LaTeX Warning: Label `overflow' multiply defined.
@@ -2188,29 +2203,12 @@ LaTeX Info: Redefining \nameref on input line 23.
  (./section/title.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 14.4pt on input line 7.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 16.
-LaTeX Font Info:    Try loading font information for T1+SourceSansPro-LF on inp
-ut line 16.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/sourcesanspro/T1SourceSansPro-LF.
-fd
-File: T1SourceSansPro-LF.fd 2016/12/03 (autoinst) Font definitions for T1/Sourc
-eSansPro-LF.
-)
-LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 16.
-Package microtype Info: Loading generic settings for font family
-(microtype)             `SourceSansPro-LF' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 17.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 17.28pt on input line 17.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 17.28pt on input line 17.
- <figures/seal_maroon.pdf, id=220, 290.5485pt x 290.54749pt>
+
+<figures/seal_maroon.pdf, id=216, 290.5485pt x 290.54749pt>
 File: figures/seal_maroon.pdf Graphic file (type pdf)
 
 <use figures/seal_maroon.pdf>
@@ -2283,16 +2281,25 @@ es/seal_maroon.pdf>]) (./section/abstract.tex [2
 
 
 ]
+LaTeX Font Info:    Try loading font information for T1+SourceSansPro-LF on inp
+ut line 3.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/sourcesanspro/T1SourceSansPro-LF.
+fd
+File: T1SourceSansPro-LF.fd 2016/12/03 (autoinst) Font definitions for T1/Sourc
+eSansPro-LF.
+)
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 3.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `SourceSansPro-LF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 (Font)              scaled to size 11.03998pt on input line 3.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
 (Font)              scaled to size 22.88956pt on input line 3.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 24.88pt on input line 3.
-) (./section/acknowledgments.tex
-[3] [4
+) (./section/acknowledgments.tex [3] [4
 
 
 ] [5] [6
@@ -2301,7 +2308,8 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 ]) (./section/signature.tex
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 12.0pt on input line 14.
- [7] [8
+
+[7] [8
 
 
 ])
@@ -2315,7 +2323,7 @@ LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.6pt on input line 3.
 
-Overfull \hbox (29.92244pt too wide) in paragraph at lines 20--20
+Overfull \hbox (29.92244pt too wide) in paragraph at lines 19--19
  [][] [][]\T1/LinuxLibertineT-TLF/m/n/12 (-20) Combining Mo-men-tum In-di-ca-to
 rs - RSI and Mov-ing Av-er-age Convergence- 
  []
@@ -2333,20 +2341,7 @@ vailable
 nput line 35.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 12.0pt on input line 35.
- [10]
-LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 15.89755pt on input line 40.
- (./thesis.loc)
-\tf@loc=\write6
-\openout6 = `thesis.loc'.
-
- (./section/introduction.tex [1
-
-
-] [2
-
-
-]
+ [10] (./section/introduction.tex
 chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -2363,272 +2358,64 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface .
 
-[3] [4] [5]
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.8pt on input line 42.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 42.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 42.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 42.
-LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 5.5pt on input line 42.
+[1
 
 
-LaTeX Font Warning: Font shape `U/lasy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 42.
 
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 7.3pt on input line 42.
-) (./section/relatedwork.tex [6]
+
+] [2]
+LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
+(Font)              scaled to size 15.89755pt on input line 22.
+ [3]) (./section/relatedwork.tex [4]
 chapter 2.
-[7
+[5
 
 
 ]
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 13.24796pt on input line 19.
+(Font)              scaled to size 13.24796pt on input line 18.
 LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
-(Font)              scaled to size 13.24796pt on input line 19.
- [8]) (./section/preliminaries.tex [9] [10
+(Font)              scaled to size 13.24796pt on input line 18.
+ [6]) (./section/examiningalgos.tex [7] [8
 
 
 ]
 chapter 3.
-[11] <figures/SMA_Google.png, id=455, 581.17125pt x 447.6725pt>
-File: figures/SMA_Google.png Graphic file (type png)
-
-<use figures/SMA_Google.png>
-Package pdftex.def Info: figures/SMA_Google.png used on input line 17.
-(pdftex.def)             Requested size: 256.0748pt x 197.25658pt.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 18.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 18.
-LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
-(Font)              scaled to size 10.07397pt on input line 18.
-
-<figures/stock_table.png, id=457, 360.34625pt x 520.94624pt>
-File: figures/stock_table.png Graphic file (type png)
-
-<use figures/stock_table.png>
-Package pdftex.def Info: figures/stock_table.png used on input line 24.
-(pdftex.def)             Requested size: 241.84842pt x 349.63629pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./section/examiningalgos.tex [12 <./figures/SMA_Google.png>] [13 <./figures/
-stock_table.png>] [14
-
-
-]
-chapter 4.
-[15] <figures/EMA_MSFT.png, id=487, 619.31375pt x 475.7775pt>
-File: figures/EMA_MSFT.png Graphic file (type png)
-
-<use figures/EMA_MSFT.png>
-Package pdftex.def Info: figures/EMA_MSFT.png used on input line 24.
-(pdftex.def)             Requested size: 256.0748pt x 196.73251pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[16] <figures/Goog_Bbands.png, id=499, 620.3175pt x 458.71375pt>
-File: figures/Goog_Bbands.png Graphic file (type png)
-
-<use figures/Goog_Bbands.png>
-Package pdftex.def Info: figures/Goog_Bbands.png used on input line 37.
-(pdftex.def)             Requested size: 256.0748pt x 189.36174pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[17 <./figures/EMA_MSFT.png>]
-<figures/AAL_RSI_signals.png, id=509, 573.14125pt x 440.64626pt>
-File: figures/AAL_RSI_signals.png Graphic file (type png)
-
-<use figures/AAL_RSI_signals.png>
-Package pdftex.def Info: figures/AAL_RSI_signals.png used on input line 52.
-(pdftex.def)             Requested size: 197.72043pt x 152.01639pt.
-
-<figures/AAL_RSI.png, id=510, 563.10374pt x 457.71pt>
-File: figures/AAL_RSI.png Graphic file (type png)
-
-<use figures/AAL_RSI.png>
-Package pdftex.def Info: figures/AAL_RSI.png used on input line 56.
-(pdftex.def)             Requested size: 197.72043pt x 160.71074pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[18 <./figures/Goog_Bbands.png>] [19 <./figures/AAL_RSI_signals.png> <./figures
-/AAL_RSI.png>] <figures/AAPL_MACD.png, id=530, 611.28375pt x 460.72125pt>
-File: figures/AAPL_MACD.png Graphic file (type png)
-
-<use figures/AAPL_MACD.png>
-Package pdftex.def Info: figures/AAPL_MACD.png used on input line 74.
-(pdftex.def)             Requested size: 197.72043pt x 149.01556pt.
-
-<figures/AAPL_RSIxMACD.png, id=531, 582.175pt x 444.66125pt>
-File: figures/AAPL_RSIxMACD.png Graphic file (type png)
-
-<use figures/AAPL_RSIxMACD.png>
-Package pdftex.def Info: figures/AAPL_RSIxMACD.png used on input line 78.
-(pdftex.def)             Requested size: 197.72043pt x 151.0132pt.
- [20 <./figures/AAPL_MACD.png> <./figures/AAPL_RSIxMACD.png>]
-<figures/Intc_msft_signals.png, id=545, 577.15625pt x 444.66125pt>
-File: figures/Intc_msft_signals.png Graphic file (type png)
-
-<use figures/Intc_msft_signals.png>
-Package pdftex.def Info: figures/Intc_msft_signals.png used on input line 99.
-(pdftex.def)             Requested size: 197.72043pt x 152.32948pt.
-
-<figures/zscore.png, id=546, 567.11874pt x 424.58624pt>
-File: figures/zscore.png Graphic file (type png)
-
-<use figures/zscore.png>
-Package pdftex.def Info: figures/zscore.png used on input line 103.
-(pdftex.def)             Requested size: 197.72043pt x 148.02432pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./section/examiningalgosresults.tex [21] [22 <./figures/Intc_msft_signals.pn
-g> <./figures/zscore.png>]
-chapter 5.
-[23
-
-
-] <figures/momentumstrategiesreturns.png, id=566, 670.1838pt x 402.303pt>
-File: figures/momentumstrategiesreturns.png Graphic file (type png)
-
-<use figures/momentumstrategiesreturns.png>
-Package pdftex.def Info: figures/momentumstrategiesreturns.png used on input li
-ne 20.
-(pdftex.def)             Requested size: 395.44087pt x 237.38739pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[24] <figures/rsimacdresults.png, id=573, 652.3572pt x 355.0866pt>
-File: figures/rsimacdresults.png Graphic file (type png)
-
-<use figures/rsimacdresults.png>
-Package pdftex.def Info: figures/rsimacdresults.png used on input line 33.
-(pdftex.def)             Requested size: 395.44087pt x 215.24252pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[25 <./figures/momentumstrategiesreturns.png>]
-<figures/pairstradingresults.png, id=581, 679.338pt x 342.078pt>
-File: figures/pairstradingresults.png Graphic file (type png)
-
-<use figures/pairstradingresults.png>
-Package pdftex.def Info: figures/pairstradingresults.png used on input line 46.
-
-(pdftex.def)             Requested size: 395.44087pt x 199.12569pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./section/twittersentiment.tex [26 <./figures/rsimacdresults.png>] [27 <./fi
-gures/pairstradingresults.png>] [28
-
-
-]
-chapter 6.
-[29] <figures/CorrelationResults.png, id=608, 538.6524pt x 322.806pt>
-File: figures/CorrelationResults.png Graphic file (type png)
-
-<use figures/CorrelationResults.png>
-Package pdftex.def Info: figures/CorrelationResults.png used on input line 21.
-(pdftex.def)             Requested size: 341.43306pt x 204.62488pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[30] <figures/NaiveResults.png, id=617, 603.2136pt x 362.3136pt>
-File: figures/NaiveResults.png Graphic file (type png)
-
-<use figures/NaiveResults.png>
-Package pdftex.def Info: figures/NaiveResults.png used on input line 30.
-(pdftex.def)             Requested size: 341.43306pt x 205.0835pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
-(Font)              scaled to size 11.03998pt on input line 42.
-
-Underfull \vbox (badness 4454) has occurred while \output is active []
-
- [31 <./figures/CorrelationResults.png>]
-<figures/decision_tree_DIS.pdf, id=631, 6607.68625pt x 4948.4875pt>
-File: figures/decision_tree_DIS.pdf Graphic file (type pdf)
-
-<use figures/decision_tree_DIS.pdf>
-Package pdftex.def Info: figures/decision_tree_DIS.pdf used on input line 47.
-(pdftex.def)             Requested size: 256.0748pt x 191.71416pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[32 <./figures/NaiveResults.png>] [33 <./figures/decision_tree_DIS.pdf>]
-<figures/MLP_graph.png, id=663, 521.95pt x 337.26pt>
-File: figures/MLP_graph.png Graphic file (type png)
-
-<use figures/MLP_graph.png>
-Package pdftex.def Info: figures/MLP_graph.png used on input line 65.
-(pdftex.def)             Requested size: 256.0748pt x 165.46469pt.
- [34 <./figures/MLP_graph.png>]
-LaTeX Font Info:    Try loading font information for T1+fvm on input line 78.
-
+LaTeX Font Info:    Try loading font information for T1+fvm on input line 11.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.35999pt on input line 78.
+(Font)              scaled to size 9.35999pt on input line 11.
 Package microtype Info: Loading generic settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [35])
-(./section/twittersentimentresults.tex [36]
-chapter 7.
-[37
 
+<figures/stock_table.png, id=426, 360.34625pt x 520.94624pt>
+File: figures/stock_table.png Graphic file (type png)
 
-] <figures/BasicModelResults.png, id=695, 690.4194pt x 415.3116pt>
-File: figures/BasicModelResults.png Graphic file (type png)
-
-<use figures/BasicModelResults.png>
-Package pdftex.def Info: figures/BasicModelResults.png used on input line 17.
-(pdftex.def)             Requested size: 395.44087pt x 237.87074pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<figures/ComplexModelResults.png, id=697, 692.3466pt x 415.3116pt>
-File: figures/ComplexModelResults.png Graphic file (type png)
-
-<use figures/ComplexModelResults.png>
-Package pdftex.def Info: figures/ComplexModelResults.png used on input line 27.
-
-(pdftex.def)             Requested size: 395.44087pt x 237.20535pt.
+<use figures/stock_table.png>
+Package pdftex.def Info: figures/stock_table.png used on input line 15.
+(pdftex.def)             Requested size: 241.84842pt x 349.63629pt.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.95pt on input line 16.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/m/n' will be
+(Font)              scaled to size 10.07397pt on input line 16.
+LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/b/n' will be
+(Font)              scaled to size 10.07397pt on input line 16.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[38] <figures/BoostingModelResults.png, id=705, 612.8496pt x 368.0952pt>
-File: figures/BoostingModelResults.png Graphic file (type png)
+[9] <figures/AAPLsma.png, id=437, 462.528pt x 346.896pt>
+File: figures/AAPLsma.png Graphic file (type png)
 
-<use figures/BoostingModelResults.png>
-Package pdftex.def Info: figures/BoostingModelResults.png used on input line 37
-.
-(pdftex.def)             Requested size: 395.44087pt x 237.51224pt.
+<use figures/AAPLsma.png>
+Package pdftex.def Info: figures/AAPLsma.png used on input line 27.
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 8.54097pt on input line 28.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2636,50 +2423,252 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [39 <./figures/BasicModelResults.png>] [40 <./figures/ComplexModelResults.png>
+ [10 <./figures/stock_table.png>] [11 <./figures/AAPLsma.png>]
+<figures/AAPLema.png, id=460, 462.528pt x 346.896pt>
+File: figures/AAPLema.png Graphic file (type png)
+ <use figures/AAPLema.png>
+Package pdftex.def Info: figures/AAPLema.png used on input line 50.
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[12] <figures/AAPLbbands.png, id=474, 462.528pt x 346.896pt>
+File: figures/AAPLbbands.png Graphic file (type png)
+
+<use figures/AAPLbbands.png>
+Package pdftex.def Info: figures/AAPLbbands.png used on input line 63.
+(pdftex.def)             Requested size: 256.0748pt x 192.06375pt.
+ [13 <./figures/AAPLema.png>] [14 <./figures/AAPLbbands.png>] <figures/AAPLrsis
+ignals.png, id=490, 462.528pt x 346.896pt>
+File: figures/AAPLrsisignals.png Graphic file (type png)
+
+<use figures/AAPLrsisignals.png>
+Package pdftex.def Info: figures/AAPLrsisignals.png used on input line 78.
+(pdftex.def)             Requested size: 197.72043pt x 148.28899pt.
+
+<figures/AAL_RSI.png, id=491, 462.528pt x 346.896pt>
+File: figures/AAL_RSI.png Graphic file (type png)
+ <use figures/AAL_RSI.png>
+Package pdftex.def Info: figures/AAL_RSI.png used on input line 82.
+(pdftex.def)             Requested size: 197.72043pt x 148.28899pt.
+
+[15 <./figures/AAPLrsisignals.png> <./figures/AAL_RSI.png>]
+<figures/AAPL_RSIxMACD.png, id=501, 462.528pt x 346.896pt>
+File: figures/AAPL_RSIxMACD.png Graphic file (type png)
+
+<use figures/AAPL_RSIxMACD.png>
+Package pdftex.def Info: figures/AAPL_RSIxMACD.png used on input line 98.
+(pdftex.def)             Requested size: 263.63171pt x 197.73276pt.
+ [16 <./figures/AAPL_RSIxMACD.png>]
+<figures/Intc_msft_signals.png, id=515, 462.528pt x 346.896pt>
+File: figures/Intc_msft_signals.png Graphic file (type png)
+
+<use figures/Intc_msft_signals.png>
+Package pdftex.def Info: figures/Intc_msft_signals.png used on input line 116.
+(pdftex.def)             Requested size: 210.90135pt x 158.17668pt.
+
+<figures/zscore.png, id=516, 567.11874pt x 424.58624pt>
+File: figures/zscore.png Graphic file (type png)
+
+<use figures/zscore.png>
+Package pdftex.def Info: figures/zscore.png used on input line 120.
+(pdftex.def)             Requested size: 210.90135pt x 157.8978pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./section/examiningalgosresults.tex [17] [18 <./figures/Intc_msft_signals.pn
+g> <./figures/zscore.png>]
+chapter 4.
+<figures/momentumstrategiesreturns.png, id=534, 621.0402pt x 373.395pt>
+File: figures/momentumstrategiesreturns.png Graphic file (type png)
+
+<use figures/momentumstrategiesreturns.png>
+Package pdftex.def Info: figures/momentumstrategiesreturns.png used on input li
+ne 19.
+(pdftex.def)             Requested size: 395.44087pt x 237.7527pt.
+
+<figures/allmomentumstrategies.png, id=535, 393.47pt x 352.31625pt>
+File: figures/allmomentumstrategies.png Graphic file (type png)
+
+<use figures/allmomentumstrategies.png>
+Package pdftex.def Info: figures/allmomentumstrategies.png used on input line 2
+4.
+(pdftex.def)             Requested size: 263.63171pt x 236.05603pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[19
+
+
 ]
-<figures/DeepLearningResults.png, id=719, 600.8046pt x 359.9046pt>
+
+LaTeX Warning: Text page 20 contains only floats.
+
+
+Overfull \vbox (2.6087pt too high) has occurred while \output is active []
+
+
+[20 <./figures/momentumstrategiesreturns.png> <./figures/allmomentumstrategies.
+png>] [21] <figures/rsimacdresults.png, id=556, 652.3572pt x 355.0866pt>
+File: figures/rsimacdresults.png Graphic file (type png)
+
+<use figures/rsimacdresults.png>
+Package pdftex.def Info: figures/rsimacdresults.png used on input line 57.
+(pdftex.def)             Requested size: 325.14488pt x 176.97935pt.
+
+<figures/allrsimacdstrat.png, id=557, 165.61874pt x 308.15125pt>
+File: figures/allrsimacdstrat.png Graphic file (type png)
+
+<use figures/allrsimacdstrat.png>
+Package pdftex.def Info: figures/allrsimacdstrat.png used on input line 61.
+(pdftex.def)             Requested size: 94.46545pt x 175.76088pt.
+ [22 <./figures/rsimacdresults.png> <./figures/allrsimacdstrat.png>]
+<figures/pairstradingresults.png, id=568, 636.9396pt x 342.078pt>
+File: figures/pairstradingresults.png Graphic file (type png)
+
+<use figures/pairstradingresults.png>
+Package pdftex.def Info: figures/pairstradingresults.png used on input line 86.
+
+(pdftex.def)             Requested size: 338.3258pt x 181.70238pt.
+ [23 <./figures/pairstradingresults.png>]) (./section/twittersentiment.tex [24]
+
+chapter 5.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 8.8pt on input line 10.
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 10.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 10.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 7.3pt on input line 10.
+LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 5.5pt on input line 10.
+
+LaTeX Font Warning: Font shape `U/lasy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 10.
+
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 7.3pt on input line 10.
+[25
+
+
+] <figures/CorrelationResults.png, id=591, 536.7252pt x 322.806pt>
+File: figures/CorrelationResults.png Graphic file (type png)
+
+<use figures/CorrelationResults.png>
+Package pdftex.def Info: figures/CorrelationResults.png used on input line 21.
+(pdftex.def)             Requested size: 307.56586pt x 184.98152pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[26] <figures/NaiveResults.png, id=599, 603.2136pt x 362.3136pt>
+File: figures/NaiveResults.png Graphic file (type png)
+
+<use figures/NaiveResults.png>
+Package pdftex.def Info: figures/NaiveResults.png used on input line 32.
+(pdftex.def)             Requested size: 285.59543pt x 171.54237pt.
+ [27 <./figures/CorrelationResults.png> <./figures/NaiveResults.png>]
+LaTeX Font Info:    Font shape `T1/SourceSansPro-LF/sb/n' will be
+(Font)              scaled to size 11.03998pt on input line 45.
+
+<figures/decision_tree_DIS.pdf, id=617, 6607.68625pt x 4948.4875pt>
+File: figures/decision_tree_DIS.pdf Graphic file (type pdf)
+
+<use figures/decision_tree_DIS.pdf>
+Package pdftex.def Info: figures/decision_tree_DIS.pdf used on input line 50.
+(pdftex.def)             Requested size: 263.63171pt x 197.37723pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[28]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 58.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 58.
+
+
+Underfull \vbox (badness 3049) has occurred while \output is active []
+
+ [29 <./figures/decision_tree_DIS.pdf>]
+<figures/MLP_graph.png, id=648, 521.95pt x 337.26pt>
+File: figures/MLP_graph.png Graphic file (type png)
+
+<use figures/MLP_graph.png>
+Package pdftex.def Info: figures/MLP_graph.png used on input line 69.
+(pdftex.def)             Requested size: 219.69086pt x 141.957pt.
+ [30 <./figures/MLP_graph.png>]
+<figures/lstmimage.jpeg, id=662, 803.0pt x 301.125pt>
+File: figures/lstmimage.jpeg Graphic file (type jpg)
+
+<use figures/lstmimage.jpeg>
+Package pdftex.def Info: figures/lstmimage.jpeg used on input line 82.
+(pdftex.def)             Requested size: 351.50671pt x 131.81537pt.
+ [31 <./figures/lstmimage.jpeg>])
+(./section/twittersentimentresults.tex [32]
+chapter 6.
+[33
+
+
+] <figures/BasicModelResults.png, id=683, 690.4194pt x 414.348pt>
+File: figures/BasicModelResults.png Graphic file (type png)
+
+<use figures/BasicModelResults.png>
+Package pdftex.def Info: figures/BasicModelResults.png used on input line 17.
+(pdftex.def)             Requested size: 307.56586pt x 184.58344pt.
+ [34 <./figures/BasicModelResults.png>]
+<figures/ComplexModelResults.png, id=691, 692.3466pt x 415.3116pt>
+File: figures/ComplexModelResults.png Graphic file (type png)
+
+<use figures/ComplexModelResults.png>
+Package pdftex.def Info: figures/ComplexModelResults.png used on input line 27.
+
+(pdftex.def)             Requested size: 351.50671pt x 210.8492pt.
+ [35 <./figures/ComplexModelResults.png>]
+<figures/BoostingModelResults.png, id=699, 612.8496pt x 368.0952pt>
+File: figures/BoostingModelResults.png Graphic file (type png)
+
+<use figures/BoostingModelResults.png>
+Package pdftex.def Info: figures/BoostingModelResults.png used on input line 37
+.
+(pdftex.def)             Requested size: 351.50671pt x 211.12512pt.
+ [36 <./figures/BoostingModelResults.png>] <figures/DeepLearningResults.png, id
+=708, 600.8046pt x 359.9046pt>
 File: figures/DeepLearningResults.png Graphic file (type png)
 
 <use figures/DeepLearningResults.png>
-Package pdftex.def Info: figures/DeepLearningResults.png used on input line 50.
+Package pdftex.def Info: figures/DeepLearningResults.png used on input line 49.
 
-(pdftex.def)             Requested size: 395.44087pt x 236.88974pt.
+(pdftex.def)             Requested size: 351.50671pt x 210.56805pt.
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[41 <./figures/BoostingModelResults.png>]
-<figures/alltwitterstrategies.png, id=729, 1697.8632pt x 1077.7866pt>
+ [37 <./figures/DeepLearningResults.png>]
+<figures/alltwitterstrategies.png, id=716, 579.16376pt x 444.66125pt>
 File: figures/alltwitterstrategies.png Graphic file (type png)
 
 <use figures/alltwitterstrategies.png>
-Package pdftex.def Info: figures/alltwitterstrategies.png used on input line 63
+Package pdftex.def Info: figures/alltwitterstrategies.png used on input line 62
 .
-(pdftex.def)             Requested size: 966.63846pt x 613.62114pt.
-
-Overfull \hbox (527.25673pt too wide) in paragraph at lines 63--64
- [][] 
- []
-
-
-LaTeX Warning: Float too large for page by 74.22113pt on input line 66.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-) (./section/conclusion.tex [42 <./figures/DeepLearningResults.png>] [43 <./fig
-ures/alltwitterstrategies.png>] [44
+(pdftex.def)             Requested size: 377.86855pt x 290.11197pt.
+ [38 <./figures/alltwitterstrategies.png>]) (./section/conclusion.tex [39] [40
 
 
 ]
+chapter 7.
+) (./section/appendix.tex [41] [42]
 chapter 8.
-) (./section/appendix.tex [45] [46]
-chapter 9.
-[47
+[43
 
 
-] [48] [49]) (./thesis.bbl [50]
+] [44] [45]) (./thesis.bbl [46]
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
  input line 42.
 
@@ -2694,21 +2683,21 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `LinuxLibertineT-TLF' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [51
+ [47
 
 
 ])
-\Changes@OutFile=\write7
-\openout7 = `thesis.soc'.
+\Changes@OutFile=\write6
+\openout6 = `thesis.soc'.
 
- [52]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 53.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 53.
+ [48]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
  (./thesis.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 53.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 53.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 51.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6DED62FF35D9727C381209D11A57A140;3788.
+(rerunfilecheck)             Checksum: D3FF7EDCD0197494526A9A1EAA13ECE1;3719.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -2717,19 +2706,19 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 53.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 29552 strings out of 492995
- 536815 string characters out of 6132704
- 802826 words of memory out of 5000000
- 31971 multiletter control sequences out of 15000+600000
- 251154 words of font info for 351 fonts, out of 8000000 for 9000
+ 29549 strings out of 492995
+ 536732 string characters out of 6132704
+ 801159 words of memory out of 5000000
+ 31972 multiletter control sequences out of 15000+600000
+ 228972 words of font info for 354 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,9n,112p,8822b,849s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 74i,9n,112p,8822b,836s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc
-}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/te
-xlive/2017/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{/usr/local/texliv
+}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{/u
+sr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/texliv
 e/2017/texmf-dist/fonts/enc/dvips/sourcesanspro/a_ggs4wk.enc}{/usr/local/texliv
 e/2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/local/texlive
 /2017/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/local/texlive/
@@ -2740,17 +2729,16 @@ e/2017/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/lo
 cal/texlive/2017/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceSansPro-Bold.
 pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/sourcesanspro/SourceS
-ansPro-Regular.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/adobe/source
-sanspro/SourceSansPro-Semibold.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
-pe1/public/bera/fvmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/txfonts/rtxmi.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/txf
-onts/rtxr.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/newtx/txex
-s.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/newtx/txsys.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
-Output written on thesis.pdf (62 pages, 2071139 bytes).
+ansPro-Semibold.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/bera
+/fvmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/txfonts/rtxm
+i.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
+Output written on thesis.pdf (58 pages, 1711312 bytes).
 PDF statistics:
- 872 PDF objects out of 1000 (max. 8388607)
- 740 compressed objects within 8 object streams
- 177 named destinations out of 1000 (max. 500000)
- 45608 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 856 PDF objects out of 1000 (max. 8388607)
+ 726 compressed objects within 8 object streams
+ 169 named destinations out of 1000 (max. 500000)
+ 44074 words of extra memory for PDF output out of 51595 (max. 10000000)
 

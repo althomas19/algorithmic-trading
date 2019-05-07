@@ -1,58 +1,57 @@
 \select@language {english}
-\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{5}{section.1.1}
-\contentsline {section}{\numberline {1.2}Our Contribution}{6}{section.1.2}
-\contentsline {section}{\numberline {1.3}Organization}{6}{section.1.3}
-\contentsline {chapter}{\numberline {2}Related Work}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Algorithmic Stock Trading}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Sentiment Analysis, Twitter, and Stock Trading}{8}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Sentiment Analysis Application to Machine Learning and Classification}{8}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Past Examinations of Sentiment and Stock Trading}{8}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Past Examinations of Twitter as a Valid Means of Stock Trading}{9}{subsection.2.2.3}
-\contentsline {chapter}{\numberline {3}Stock Trading Preliminaries}{11}{chapter.3}
-\contentsline {chapter}{\numberline {4}Examination of Trading Algorithms}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Data}{15}{section.4.1}
-\contentsline {section}{\numberline {4.2}Momentum Trading Strategies}{15}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Simple Moving Average}{15}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Expected Moving Average}{16}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Bollinger Bands}{16}{subsection.4.2.3}
-\contentsline {subsection}{\numberline {4.2.4}RSI - Relative Strength Index}{18}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Combining Momentum Indicators - RSI and Moving Average Convergence-Divergence (MACD)}{19}{subsection.4.2.5}
-\contentsline {section}{\numberline {4.3}Pairs Trading - Arbitrage and Mean Reversion}{20}{section.4.3}
-\contentsline {chapter}{\numberline {5}Experimental Results of Standard Algorithms}{23}{chapter.5}
-\contentsline {section}{\numberline {5.1}Momentum Strategies}{23}{section.5.1}
-\contentsline {section}{\numberline {5.2}Combination Momentum Strategies}{24}{section.5.2}
-\contentsline {section}{\numberline {5.3}Pairs Trading}{25}{section.5.3}
-\contentsline {chapter}{\numberline {6}Twitter Sentiment and Stock Trading}{29}{chapter.6}
-\contentsline {section}{\numberline {6.1}Twitter Data and Aggregation}{29}{section.6.1}
-\contentsline {section}{\numberline {6.2}Statistical Approach}{30}{section.6.2}
-\contentsline {section}{\numberline {6.3}Stock Trading and Machine Learning Algorithms}{31}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Trees}{32}{subsection.6.3.1}
-\contentsline {subsubsection}{\nonumberline Decision Tree Classifier}{32}{section*.17}
-\contentsline {subsubsection}{\nonumberline RandomForest Regressor}{32}{section*.19}
-\contentsline {subsection}{\numberline {6.3.2}Other Classifiers}{33}{subsection.6.3.2}
-\contentsline {subsubsection}{\nonumberline $K$-nearest Neighbors Classifier}{33}{section*.20}
-\contentsline {subsubsection}{\nonumberline MLP Classifier}{34}{section*.21}
-\contentsline {subsection}{\numberline {6.3.3}Deep Learning}{34}{subsection.6.3.3}
-\contentsline {section}{\numberline {6.4}Models with Different Features applying Machine Learning Algorithms}{35}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Simplistic Features}{36}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Complex Features}{36}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Stacked Features}{36}{subsection.6.4.3}
-\contentsline {subsection}{\numberline {6.4.4}Deep Learning}{36}{subsection.6.4.4}
-\contentsline {chapter}{\numberline {7}Twitter Sentiment Results}{37}{chapter.7}
-\contentsline {section}{\numberline {7.1}Simplistic Model}{38}{section.7.1}
-\contentsline {section}{\numberline {7.2}Extended Model}{38}{section.7.2}
-\contentsline {section}{\numberline {7.3}Stacking Model}{39}{section.7.3}
-\contentsline {section}{\numberline {7.4}Deep Learning Model}{40}{section.7.4}
-\contentsline {section}{\numberline {7.5}Discussion and Comparison}{41}{section.7.5}
-\contentsline {chapter}{\numberline {8}Conclusion}{45}{chapter.8}
-\contentsline {section}{\numberline {8.1}Contributions}{45}{section.8.1}
-\contentsline {section}{\numberline {8.2}Future Work}{45}{section.8.2}
-\contentsline {chapter}{\numberline {9}Appendix}{47}{chapter.9}
-\contentsline {section}{\numberline {9.1}Implementation}{47}{section.9.1}
-\contentsline {subsection}{\numberline {9.1.1}SMA}{47}{subsection.9.1.1}
-\contentsline {subsection}{\numberline {9.1.2}EMA}{47}{subsection.9.1.2}
-\contentsline {subsection}{\numberline {9.1.3}Bollinger Bands}{48}{subsection.9.1.3}
-\contentsline {subsection}{\numberline {9.1.4}RSI}{49}{subsection.9.1.4}
-\contentsline {subsection}{\numberline {9.1.5}Combination Momentum Strategies}{49}{subsection.9.1.5}
-\contentsline {subsection}{\numberline {9.1.6}Pairs Trading}{50}{subsection.9.1.6}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}Our Contribution}{4}{section.1.2}
+\contentsline {section}{\numberline {1.3}Organization}{4}{section.1.3}
+\contentsline {chapter}{\numberline {2}Related Work}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Algorithmic Stock Trading}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Sentiment Analysis, Twitter, and Stock Trading}{6}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Sentiment Analysis Application to Machine Learning and Classification}{6}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Past Examinations of Sentiment and Stock Trading}{6}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Past Examinations of Twitter as a Valid Means of Stock Trading}{7}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {3}Examination of Trading Algorithms}{9}{chapter.3}
+\contentsline {section}{\numberline {3.1}Stock Trading and Data}{9}{section.3.1}
+\contentsline {section}{\numberline {3.2}Momentum Trading Strategies}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Simple Moving Average}{11}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Expected Moving Average}{12}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Bollinger Bands}{12}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}RSI - Relative Strength Index}{14}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Combining Momentum Indicators - RSI and Moving Average Convergence-Divergence (MACD)}{15}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Pairs Trading - Arbitrage and Mean Reversion}{16}{section.3.3}
+\contentsline {chapter}{\numberline {4}Experimental Results of Standard Algorithms}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Momentum Strategies}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Combination Momentum Strategies}{22}{section.4.2}
+\contentsline {section}{\numberline {4.3}Pairs Trading}{23}{section.4.3}
+\contentsline {chapter}{\numberline {5}Twitter Sentiment and Stock Trading}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Twitter Data and Aggregation}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Statistical Approach}{26}{section.5.2}
+\contentsline {section}{\numberline {5.3}Stock Trading and Machine Learning Algorithms}{28}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Trees}{28}{subsection.5.3.1}
+\contentsline {subsubsection}{\nonumberline Decision Tree Classifier}{28}{section*.16}
+\contentsline {subsubsection}{\nonumberline RandomForest Regressor}{28}{section*.18}
+\contentsline {subsection}{\numberline {5.3.2}$K$-nearest Neighbors Classifier}{29}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Neural Networks}{30}{subsection.5.3.3}
+\contentsline {subsubsection}{\nonumberline MLP Classifier}{30}{section*.19}
+\contentsline {subsubsection}{\nonumberline Recurrent Neural Networks - Long Short Term Memory Model}{30}{section*.21}
+\contentsline {subsection}{\numberline {5.3.4}Stacking}{31}{subsection.5.3.4}
+\contentsline {section}{\numberline {5.4}Feature Sets and Trading Strategy}{32}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Trading Strategy}{32}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Simplistic Features}{32}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}Complex Features}{32}{subsection.5.4.3}
+\contentsline {chapter}{\numberline {6}Twitter Sentiment Results}{33}{chapter.6}
+\contentsline {section}{\numberline {6.1}Simplistic Model}{34}{section.6.1}
+\contentsline {section}{\numberline {6.2}Extended Model}{35}{section.6.2}
+\contentsline {section}{\numberline {6.3}Stacking Model}{35}{section.6.3}
+\contentsline {section}{\numberline {6.4}Deep Learning Model}{36}{section.6.4}
+\contentsline {section}{\numberline {6.5}Discussion and Comparison}{38}{section.6.5}
+\contentsline {chapter}{\numberline {7}Conclusion}{41}{chapter.7}
+\contentsline {section}{\numberline {7.1}Contributions}{41}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future Work}{41}{section.7.2}
+\contentsline {chapter}{\numberline {8}Appendix}{43}{chapter.8}
+\contentsline {section}{\numberline {8.1}Implementation}{43}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}SMA}{43}{subsection.8.1.1}
+\contentsline {subsection}{\numberline {8.1.2}EMA}{43}{subsection.8.1.2}
+\contentsline {subsection}{\numberline {8.1.3}Bollinger Bands}{44}{subsection.8.1.3}
+\contentsline {subsection}{\numberline {8.1.4}RSI}{45}{subsection.8.1.4}
+\contentsline {subsection}{\numberline {8.1.5}Combination Momentum Strategies}{45}{subsection.8.1.5}
+\contentsline {subsection}{\numberline {8.1.6}Pairs Trading}{46}{subsection.8.1.6}

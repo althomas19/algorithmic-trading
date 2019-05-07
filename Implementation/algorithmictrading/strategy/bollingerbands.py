@@ -36,14 +36,17 @@ def execute(stock_name, start_date, end_date, fetchStocks, share_amount):
     # combine low,high signals to create stock ownership signal
     df['signal'] = createSignals(df['positions'].copy())
 
+    dfplot = df.copy(deep=True)
+    dfplot = dfplot.loc[:600]
     ax1 = plt.figure().add_subplot(111,  ylabel='Price in $')
-    df[['upper_band', 'lower_band', 'middle_band', 'closing_price']].plot(ax=ax1, lw=2.)
+    dfplot[['upper_band', 'lower_band', 'middle_band', 'closing_price']].plot(ax=ax1, lw=2.)
+    plt.xlabel("Time (Days)")
     ax1.set_title(stock_name[5:] + ": Bollinger Bands")
-    ax1.plot(df.loc[df.positions == 1.0].index,
-             df.lower_band[df.positions == 1.0],
+    ax1.plot(dfplot.loc[dfplot.positions == 1.0].index,
+             dfplot.lower_band[dfplot.positions == 1.0],
              '^', markersize=10, color='m')
-    ax1.plot(df.loc[df.positions == -1.0].index,
-             df.upper_band[df.positions == -1.0],
+    ax1.plot(dfplot.loc[dfplot.positions == -1.0].index,
+             dfplot.upper_band[dfplot.positions == -1.0],
              'v', markersize=10, color='k')
 
     #share_amount = 100

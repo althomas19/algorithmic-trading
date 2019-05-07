@@ -1,11 +1,11 @@
 from algorithmictrading.strategy import sma, ema, bollingerbands, pairstrading, relativestrengthindex, rsi_macd, twitter_sentiment
 
 stock_tickers = ["WIKI/AAPL", "WIKI/GOOG", "WIKI/DIS", 'WIKI/FB', 'WIKI/INTC', 'WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/AAL', 'WIKI/PYPL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/VOD', 'WIKI/MNST']
-#stock_tickers = ["WIKI/GOOG"]
+stock_tickers = ["WIKI/AAPL"]
 fetch_stocks = False  # if array of stockTickers updated run driver with this set to true, will download csv
 stock_tickers_pairs_trading = ["WIKI/AAPL", "WIKI/DIS", 'WIKI/INTC', 'WIKI/MSFT', 'WIKI/AMD', 'WIKI/HAS', 'WIKI/EBAY', 'WIKI/AAL', 'WIKI/QCOM', 'WIKI/SBUX', 'WIKI/VOD', 'WIKI/MNST']
 pairs = [('WIKI/QCOM', 'WIKI/SBUX'), ('WIKI/INTC', 'WIKI/MSFT'), ('WIKI/AMD', 'WIKI/SBUX'), ('WIKI/AMD', 'WIKI/EBAY'), ('WIKI/AMD', 'WIKI/VOD')]
-
+#pairs = [('WIKI/INTC', 'WIKI/MSFT')]
 def momentum_strategies():
     plots = []
     #denominations = [10, 100, 1000]
@@ -29,8 +29,8 @@ def momentum_strategies():
             print(stock, denom, "Bollinger Bands", percent_performance_bbands)
             print(stock, denom, "RSI", percent_performance_rsi)
 
-    # for plot in plots:
-    #     plot.show()
+    for plot in plots:
+        plot.show()
 
 
 def intraday_strategies():
@@ -69,8 +69,8 @@ def twitter_sentiment_strategy():  # THESIS WORK!
         twitter_sentiment.execute(stock, "2006-10-01", "2017-01-01", fetch_stocks)
 
 if __name__ == '__main__':
-    #momentum_strategies()
+    momentum_strategies()
     #pairs_strategy()
     #pairs_cointegration()
-    intraday_strategies()
+    #intraday_strategies()
     #twitter_sentiment_strategy()
